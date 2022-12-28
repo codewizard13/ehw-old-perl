@@ -84,6 +84,7 @@ chef/
 public/assets/
 
 # Eric's ignores (11/29/21)
+shortcuts/
 .git/
 #pix/
 #_pix/
