@@ -63,7 +63,10 @@ Not sure how long it will take, but every journey starts with a single step. Or,
 - #GOTCHA: Now HyperV and WSL are installed, but only a black screen with blinking cursor comes up
 - #SOLVED: Unfortunately, to run WSL on Win 10 you have to uninstall Docker Desktop - they don't seem to play well together. Also, it doesn't matter that you are not currently running Docker, it needs to be totally installed. Now I have the Ubuntu prompt and testing with `ps -aux` works.
 - #POSSIBLE:  Maybe Docker Desktop simply needs to be turned off, but I already uninstalled it.
-- Resources:
+
+---
+
+## Resources:
   - https://learn.microsoft.com/en-us/answers/questions/1336873/how-to-solve-wsl-service-createinstance-createvm-h
   - https://github.com/microsoft/WSL/issues/11923
   - https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#installation-issues
