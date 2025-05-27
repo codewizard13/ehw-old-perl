@@ -38,3 +38,7 @@ Not sure how long it will take, but every journey starts with a single step. Or,
 
 ---
 
+## Change Notes
+
+- [] Determine how to get Perl to work in VSCODE in 2025
+
