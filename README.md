@@ -42,3 +42,16 @@ Not sure how long it will take, but every journey starts with a single step. Or,
 
 - [] Determine how to get Perl to work in VSCODE in 2025
 
+- 2 Best ways in 2025 to run Perl on Windows 10+ seem to be WSL or Strawberry Perl (What about Komodo IDE & ActivePerl? It's not some complex paid thing)
+- #GOTCHA: WSL says `Wsl/Service/CreateInstance/CreateVm/HCS/HCS_E_HYPERV_NOT_INSTALLED`
+- #SOLVED:  Ensure Windows Features: Hypervisor and Windows Subsystem for Linux are installed
+
+![Turn Windows Features On/Off:  WSL & Hyper-V](pix/screen-wsl-features-win-10-hyperv.png)
+
+- #GOTCHA: Now HyperV and WSL are installed, but only a black screen with blinking cursor comes up
+- #SOLVED: Unfortunately, to run WSL on Win 10 you have to uninstall Docker Desktop - they don't seem to play well together. Also, it doesn't matter that you are not currently running Docker, it needs to be totally installed.
+- #POSSIBLE:  Maybe Docker Desktop simply needs to be turned off, but I already uninstalled it.
+- Resources:
+  - https://learn.microsoft.com/en-us/answers/questions/1336873/how-to-solve-wsl-service-createinstance-createvm-h
+  - https://github.com/microsoft/WSL/issues/11923
+  - https://learn.microsoft.com/en-us/windows/wsl/troubleshooting#installation-issues
