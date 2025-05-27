@@ -64,6 +64,8 @@ Not sure how long it will take, but every journey starts with a single step. Or,
 - #SOLVED: Unfortunately, to run WSL on Win 10 you have to uninstall Docker Desktop - they don't seem to play well together. Also, it doesn't matter that you are not currently running Docker, it needs to be totally installed. Now I have the Ubuntu prompt and testing with `ps -aux` works.
 - #POSSIBLE:  Maybe Docker Desktop simply needs to be turned off, but I already uninstalled it.
 
+- In the Ubuntu CLI test that Perl is installed and working with this command `perl -e 'print "Hello World!\n\n"'`. It should print **"Hello World!** followed by a blank line.
+
 ---
 
 ## Resources:
