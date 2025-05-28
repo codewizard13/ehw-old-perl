@@ -66,6 +66,111 @@ Not sure how long it will take, but every journey starts with a single step. Or,
 
 - In the Ubuntu CLI test that Perl is installed and working with this command `perl -e 'print "Hello World!\n\n"'`. It should print **"Hello World!** followed by a blank line.
 
+
+## Run Perl in VSCODE WSL from Windows
+
+Absolutely! Here’s your **updated Quick Start** for using VS Code, WSL2, and Perl (with Git), incorporating all the key gotchas and best practices from this thread:
+
+---
+
+## **Quick Start: VS Code + WSL2 + Perl + Git (Ubuntu 22)**
+
+### **1. Open a WSL Terminal**
+- Press the Windows key, type `wsl`, and launch your Ubuntu terminal.
+
+---
+
+### **2. Move/Work in the WSL Filesystem (Recommended)**
+- For best performance and compatibility, keep your project folder in your WSL home directory:
+  ```bash
+  cp -r /mnt/c/Users/YourName/Documents/your_project_folder ~/your_project_folder
+  cd ~/your_project_folder
+  ```
+- If you must use files on Windows, access them via `/mnt/c/...`, but expect slower performance and possible permission issues.
+
+---
+
+### **3. Start VS Code in WSL**
+- In your WSL terminal, from your project directory, run:
+  ```bash
+  code .
+  ```
+- Confirm the bottom-left of VS Code shows `WSL: Ubuntu`.
+
+---
+
+### **4. Open the Correct Project Folder**
+- Always open the folder containing your `.git` directory, not a parent or just the `.git` folder.
+
+---
+
+### **5. Install/Verify VS Code Extensions**
+- Ensure these are installed and enabled (in WSL):
+  - **Remote - WSL** (Microsoft)
+  - **Perl Navigator** (bscan) or **Perl** (Gerald Richter)
+  - **Git** (built-in; check it’s enabled in WSL)
+
+---
+
+### **6. Configure Git in WSL**
+- In your WSL terminal, set your Git identity:
+  ```bash
+  git config --global user.name "Your Name"
+  git config --global user.email "your@email.com"
+  ```
+- For Linux development, set line endings:
+  ```bash
+  git config --global core.autocrlf input
+  ```
+- If working on `/mnt/c/...` and see permission issues:
+  ```bash
+  git config core.fileMode false
+  ```
+
+---
+
+### **7. Use Git Only in WSL**
+- Do not use Git for Windows and WSL Git on the same repo. Always use the WSL terminal or the VS Code terminal (which should be WSL bash).
+
+---
+
+### **8. Working with Perl**
+- Test Perl:
+  ```bash
+  perl -v
+  ```
+- Run scripts:
+  ```bash
+  perl yourscript.pl
+  ```
+- Install modules with `cpanm` as needed, using `local::lib` for user installs.
+
+---
+
+### **9. Open the Integrated Terminal in VS Code**
+- Use ``Ctrl+` `` or Terminal > New Terminal. It should open a WSL bash shell.
+
+---
+
+## **Common Pitfalls & Fixes**
+
+| Problem                            | Solution                                                   |
+| ---------------------------------- | ---------------------------------------------------------- |
+| All files show as untracked in Git | Open VS Code in WSL, configure Git user/email in WSL       |
+| Git asks for user.name/user.email  | Set with `git config --global user.name/email` in WSL      |
+| VS Code not in WSL mode            | Always launch with `code .` from WSL terminal              |
+| Slow file operations               | Move project to WSL filesystem (`~/project`)               |
+| Permission/line ending issues      | Set `core.fileMode false` and `core.autocrlf input` in Git |
+| Git extension not working          | Enable/install in WSL, open correct folder                 |
+
+---
+
+**You’re now set up for smooth Perl and Git development in VS Code on WSL2!**  
+Let me know if you want a printable checklist or further automation tips.
+
+---
+Answer from Perplexity: pplx.ai/share
+
 ---
 
 ## Resources:
