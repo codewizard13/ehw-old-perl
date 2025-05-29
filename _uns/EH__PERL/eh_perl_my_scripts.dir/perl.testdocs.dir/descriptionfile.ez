@@ -1,0 +1,1376 @@
+#----------------------------------------#
+
+File Number: 1
+Name: .
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 2
+Name: ..
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 3
+Name: simpif.pl
+
+Description:
+Demonstrates using if to compare numbers.
+
+#----------------------------------------#
+
+File Number: 4
+Name: mi2km.pl
+
+Description:
+Not my script.  This script lets user enter a number without units being specifiedto miles and converts that number to miles and kilometers.
+
+#----------------------------------------#
+
+File Number: 5
+Name: simintlim.pl
+
+Description:
+Demonstrates how perl automatically converts large numbers to scientific notation.
+
+#----------------------------------------#
+
+File Number: 6
+Name: simcomp.pl
+
+Description:
+Takes two numbers the user inputs, and compares themwith an if statement.  If the numbers are equal, ittells the user so; otherwise, there is no response.
+
+#----------------------------------------#
+
+File Number: 7
+Name: futval.pl
+
+Description:
+Calculates future value of an investment based on aninitial amount and on regular monthly payments.
+
+#----------------------------------------#
+
+File Number: 8
+Name: ehex1.pl
+
+Description:
+Not my script. Not sure what this does, but it seems to be some sort of HTML parsing code.
+
+#----------------------------------------#
+
+File Number: 9
+Name: simwhile.pl
+
+Description:
+Uses a while loop to demonstrate a simple count loop.
+
+#----------------------------------------#
+
+File Number: 10
+Name: simuntil.pl
+
+Description:
+Uses an until loop to let user keep trying to enter the correct answer.  If the correct answer is input the program tells user the answer is correct and then abruptly ends.
+
+#----------------------------------------#
+
+File Number: 11
+Name: eh1stsrceng.pl
+
+Description:
+Not my script.  Looks like this is a search engine script.  Does not work yet; may be missing modules.
+
+#----------------------------------------#
+
+File Number: 12
+Name: arrayfrstdin.pl
+
+Description:
+Print array from standard input w/ no prompts.  Required to press <ctrl> + d to end program.
+
+#----------------------------------------#
+
+File Number: 13
+Name: pwr2lst.pl
+
+Description:
+Simple exponent operator demonstration.  Asks for a number, n, and prints 2 to the exponent n.
+
+#----------------------------------------#
+
+File Number: 14
+Name: countfiles.pl
+
+Description:
+Simple script.  Uses foreach loop and calibration to count the number of files, folders, etc in a given folder.
+
+#----------------------------------------#
+
+File Number: 15
+Name: dftest1wrsh.pl
+
+Description:
+Test script to help me write ascript to display system info inreal-time on a cgi page.Uses the AIX "df -k" shell command and creates a webpage on the fly to output that data in the same format as it would print in a terminal window.
+
+#----------------------------------------#
+
+File Number: 16
+Name: arrayprnall.pl
+
+Description:
+Calculates length of array so that it can print all elements in the array.
+
+#----------------------------------------#
+
+File Number: 17
+Name: passgen1.pl
+
+Description:
+This should be my last script of 2001.  This is my first draft of a a password generating program. Currently it only does alpha permutations from aaa to zzz.  This does not include capitals, numerals, or symbols. Eventually it will cycle through all letters and number combinations.  Perhaps I can do it with an ascii and a formula?  Well, here we go...
+
+#----------------------------------------#
+
+File Number: 18
+Name: linkextortest_1_w2ndrefpg.pl
+
+Description:
+Simple demonstration of HTML_LinkExtor module.  Gets all links found in the html doc and saves it to a file.  Checks for changes periodically (user specified), and if the page has changed it will record new info in a change_log.There are 3 associated files:1)  $basehtmldoc:  where the code fromindicated web page is stored. servesas a reference and all else is based off of this.2)  $urllog: ($filename_$date_urllog.txt);  a filethat stores the urls found as text.3)  $urlpage: the HTML version where each url ismade into a hyperlink.4)  $
+
+#----------------------------------------#
+
+File Number: 19
+Name: getprogdescr_v3.pl
+
+Description:
+Reads one of my perl files and prints out the description text.(3rd try)
+
+#----------------------------------------#
+
+File Number: 20
+Name: matchbetweenstartnend_perlfaq6.pl
+
+Description:
+Is unadulterated example from the Perl FAQ 6, found under : Here's code that finds everything between START and END in a paragraph: 
+
+#----------------------------------------#
+
+File Number: 21
+Name: arrayvaraslicesubscr.pl
+
+Description:
+Demonstrates array range used as subscript.
+
+#----------------------------------------#
+
+File Number: 22
+Name: calccdrspd.pl
+
+Description:
+Calculates avg. recording speed for CD-R mediabased on capacity(MB) and actual record periodlength.
+
+#----------------------------------------#
+
+File Number: 23
+Name: chkifflexists.pl
+
+Description:
+This program checks to see if an opened file actually exists.  If yes, it displays the contents of the file to stdout in all UPPER CASE.
+
+#----------------------------------------#
+
+File Number: 24
+Name: ehgeturlparsepix_3.pl
+
+Description:
+Various pieces of code to try in the ehgeturlparsepix.pl script.Rips HTML source code from aweb page, then lets you compare.that one to subsequent rips of thesame page.  Differences are storedin a text file.
+
+#----------------------------------------#
+
+File Number: 25
+Name: cpyfiletoanother.pl
+
+Description:
+This script copies the contents of one file to another instantly.  If the destination file doesn't exist, it creates it. If it can't open the input or output file, it tells you so.  WARNING!  This file will overwrite a file that already exists: UNFORGIVING.
+
+#----------------------------------------#
+
+File Number: 26
+Name: retrievematches.pl
+
+Description:
+Uses the "$1" variable as the default result of a matched string.derived from the following usenet post:http://groups.google.com/groups?hl=en&selm=902862439.23601.0.nnrp-06.c2de775f%40news.demon.co.uk
+
+#----------------------------------------#
+
+File Number: 27
+Name: die2disperror.pl
+
+Description:
+This simple program reads a file to standard output. If filename is incorrect or does not exist, it gives an error.  Demonstrates using error msgs if open is unsuccessful.
+
+#----------------------------------------#
+
+File Number: 28
+Name: ehcreatefile.pl
+
+Description:
+Demonstrates how to create a new directory w/ perl, how to use the BASENAME and CWD modules, how to give everyone access, and how to delete a directory tree.  NOTE:  You must use the fully qualified path when asked for a path.
+
+#----------------------------------------#
+
+File Number: 29
+Name: ehgeturl.pl
+
+Description:
+This program will rip the source code of any url. It will now also save the source as an html document in a specified folder.
+
+#----------------------------------------#
+
+File Number: 30
+Name: eh_renameext.pl
+
+Description:
+I am having a problem trying to convert extensions w/ the following syntax:mv *.perl *.plThis is supposed to rename all files that end in .perl to 'whatever.pl'.It just doesn't quite work.This script should solve that problem.
+
+#----------------------------------------#
+
+File Number: 31
+Name: wsinst_multi.pl
+
+Description:
+To automatically create a config file fordoing multiple image creates for workstationswith similar configurations.I wrote a cshell script that does thiscalled "wsinst_multi.makecfg.csh", andI think the perl code should beeasier to write.
+
+#----------------------------------------#
+
+File Number: 32
+Name: ehgeturlparsejpgngif.pl
+
+Description:
+This program will rip the source code of any url. It will now also save the source as an html document in a specified folder.  Currently, it only downloads text (HTML), not the corresponding images.WORKS GOOD !!!  --> Gets HTML sourcecode but not pix.
+
+#----------------------------------------#
+
+File Number: 33
+Name: ehtst2.pl
+
+Description:
+Hello World-type simple print demonstration.
+
+#----------------------------------------#
+
+File Number: 34
+Name: ehrdnprntlnsfrfile.pl
+
+Description:
+Demonstrates using a while loop to read all lines in a file.  Uses a local backup of /etc/passwd.This file requires the file:~v2cib484/passwd.051801.bkpto run.
+
+#----------------------------------------#
+
+File Number: 35
+Name: wsinst_multi_wfulltracing.pl
+
+Description:
+To automatically create a config file fordoing multiple image creates for workstationswith similar configurations.I wrote a cshell script that does thiscalled "wsinst_multi.makecfg.csh", andI think the perl code should beeasier to write.
+
+#----------------------------------------#
+
+File Number: 36
+Name: rename2
+
+Description:
+Not my script.  Taken from : http://www.evolt.org/article/Renaming_Files_with_Perl/17/351/
+
+#----------------------------------------#
+
+File Number: 37
+Name: rename3.pl
+
+Description:
+Rename files using split.
+
+#----------------------------------------#
+
+File Number: 38
+Name: joinsngllns.pl
+
+Description:
+Takes each line entered, adds a space at the end, and joins the lines together to make one line. Must exit program w/ <ctrl> + d.
+
+#----------------------------------------#
+
+File Number: 39
+Name: listinalist.pl
+
+Description:
+Assign a list as part of another list.
+
+#----------------------------------------#
+
+File Number: 40
+Name: merge2files.pl
+
+Description:
+This file takes the contents of file1 and file2 and merges them vertically; prints a line of 1 then corresponding line of 2; then the next line and so on.
+
+#----------------------------------------#
+
+File Number: 41
+Name: findallfromstart2fin.pl
+
+Description:
+Demonstrates using regular expressions to search a file for all text between a string $start, and $end.
+
+#----------------------------------------#
+
+File Number: 42
+Name: prtlstfrmrange.pl
+
+Description:
+Given a start number and an end number, this script prints a list of all the integers that fall between them.
+
+#----------------------------------------#
+
+File Number: 43
+Name: randnumgen.pl
+
+Description:
+Generates 10 random numbers.
+
+#----------------------------------------#
+
+File Number: 44
+Name: rdfln2array.pl
+
+Description:
+Reads entire input file into an array
+
+#----------------------------------------#
+
+File Number: 45
+Name: rdinpt2arry.pl
+
+Description:
+Unless the file open was successful, print an error msg and quit.  Otherwise, print the contents of the file to screen.
+
+#----------------------------------------#
+
+File Number: 46
+Name: mail_form.pl
+
+Description:
+Not my script.  Mail Form Handler.  Doesn't quite work yet.
+
+#----------------------------------------#
+
+File Number: 47
+Name: blue.pl
+
+Description:
+Not my script.  Demonstrates ldap search commands. Does a lookup in bluepages and returns the attributes listed in the command for all employees in the "rocheste" directory. It is opened in a pipe so that we can format the data as it comes in.
+
+#----------------------------------------#
+
+File Number: 48
+Name: simpasswdcheck.pl
+
+Description:
+This is a very simple password checker script.
+
+#----------------------------------------#
+
+File Number: 49
+Name: getprogdescr_v4.pl
+
+Description:
+Reads one of my perl files and prints out the description text.(3rd try)
+
+#----------------------------------------#
+
+File Number: 50
+Name: srchnreplace.pl
+
+Description:
+Not my script.  Will replace any number of words with another word at every instance.
+
+#----------------------------------------#
+
+File Number: 51
+Name: wrtupcs2stderr.pl
+
+Description:
+This file takes contents of a file and displays the output in all capital letters.
+
+#----------------------------------------#
+
+File Number: 52
+Name: getprogdescr_v5.pl
+
+Description:
+Reads one of my perl files and prints out the description text.Based on version 4 which works.  This version uses a foreach loop to read every file in the list
+
+#----------------------------------------#
+
+File Number: 53
+Name: aix_led_errors.pl
+
+Description:
+User enters in an RS6000 trouble code and this program gives the code's meaning.  Is a good example of elsif statements.  It seems to me this file could be written more efficiently if I set it up as a 2 dimensional array.  
+
+#----------------------------------------#
+
+File Number: 54
+Name: aixledcode_make.pl
+
+Description:
+This program lets a user enter in an AIX LED error code and it will output the meaning of that code per "Service Request Number Cross-Reference Version 4.1"
+
+#----------------------------------------#
+
+File Number: 55
+Name: grepanarray.pl
+
+Description:
+A simple script that finds and prints all lines in a specified text file which contain worda and/or wordb.  It finds all instances, not just the first.
+
+#----------------------------------------#
+
+File Number: 56
+Name: geturlsonly.pl
+
+Description:
+Not my script.  Script found on:http://www.gellyfish.com/htexamples/geturls.plSupposed to get urls, but doesn't work because it doesn't like the Parser.pm module.
+
+#----------------------------------------#
+
+File Number: 57
+Name: crtsymsgpostsplit.pl
+
+Description:
+This little script prints a courtesy message that can be copiedand sent to user.  The advantage is that is sets automaticallyfills in the path names for you.
+
+#----------------------------------------#
+
+File Number: 58
+Name: daleyslotteryresults.pl
+
+Description:
+Not my script.  original filenmae = getloto.perl.  Gets UK lottery result from a given url.
+
+#----------------------------------------#
+
+File Number: 59
+Name: scratch.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 60
+Name: eh_multiwsinst_perl.pl
+
+Description:
+Creates a config file and then runs the commandto build wsinstall image from a the inputparameters given by user.
+
+#----------------------------------------#
+
+File Number: 61
+Name: eh_makeplscrtmplt.pl
+
+Description:
+Makes a new file w/ a user-specified name and based on a standard template designed by me (Eric Hepperle).
+
+#----------------------------------------#
+
+File Number: 62
+Name: eh_waystoconcat.pl
+
+Description:
+This file demonstrates various ways to concatenate files in perl.
+
+#----------------------------------------#
+
+File Number: 63
+Name: ehcpydosbinfile.pl
+
+Description:
+Supposed to demonstrate how to copy (upload/download) a binary file in perl.  Does not work.
+
+#----------------------------------------#
+
+File Number: 64
+Name: arraycpyncomp.pl
+
+Description:
+Copy the elements of one array to another and then comparethe resulting array to check for any differences, (thereshould be none).
+
+#----------------------------------------#
+
+File Number: 65
+Name: searchfileforavi.pl
+
+Description:
+Searches a test string and tries to match <something>.avi; useful for searching e-donkey files for descriptions.
+
+#----------------------------------------#
+
+File Number: 66
+Name: append2flwsubrtn.pl
+
+Description:
+Simple demonstration of appending a string to a text file, then printing entire file to screen.  Also demonstrates syntax for getting system time.
+
+#----------------------------------------#
+
+File Number: 67
+Name: stdinex.pl
+
+Description:
+Example from "Teach Yourself Perl in 21 Days".  lets user enter two words, then prints them in reverse order.  Demonstrates how to get input from command line in perl, (<STDIN>).
+
+#----------------------------------------#
+
+File Number: 68
+Name: ehformreader.pl
+
+Description:
+Not my script.  Form reader program.  This one seems to work.  Need to read and figure out it's mechanics.
+
+#----------------------------------------#
+
+File Number: 69
+Name: foo.pl
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 70
+Name: splittest.pl
+
+Description:
+simple program to demonstrate the split function of perl.
+
+#----------------------------------------#
+
+File Number: 71
+Name: arraytest1.pl
+
+Description:
+Test script to demonstrate reading array variables and displaying them in a specific line format.  (For example: el 1, el 2, etc ...)
+
+#----------------------------------------#
+
+File Number: 72
+Name: ehgeturlparsepix.pl
+
+Description:
+Rips HTML source code from aweb page, then lets you compare.that one to subsequent rips of thesame page.  Differences are storedin a text file.
+
+#----------------------------------------#
+
+File Number: 73
+Name: upcs2lwrcsconv.pl
+
+Description:
+Converts a line of text to all lowercase.
+
+#----------------------------------------#
+
+File Number: 74
+Name: lwrcs2uprcsconv.pl
+
+Description:
+Not my script.  Simple lowercase to all upper-case conversion script.
+
+#----------------------------------------#
+
+File Number: 75
+Name: dcefix.pl
+
+Description:
+Runs the dce repair procedure from helpful.d as an automated script.DOES NOT WORK !!!
+
+#----------------------------------------#
+
+File Number: 76
+Name: concatlntest.pl
+
+Description:
+This file allows user to type in an infinite number ofstrings, and then concatenates them into onemega-string.Taken from:'TEACH YOURSELF PERL IN 21 DAYS'; 1995; SAM's Publishing;David Till
+
+#----------------------------------------#
+
+File Number: 77
+Name: eh_mailpipedcmd.pl
+
+Description:
+Searches for id's owned by a userbased on an employee serialentered	by the user.Additionally, it converts theserial to uppercase, then lowercase and does a modified searchas well.Finally, it will mail someone theresults.
+
+#----------------------------------------#
+
+File Number: 78
+Name: eh_rs6000diag_1.pl
+
+Description:
+Eventually, this program will give the option to do just about everyting.  It currently runs a batch process of diagnostic aix commands and then writes the results to an unfiltered report file.  Afs id commands are also executed.  The next step will be to parse the unabridged log file and create a report based on identified flags.
+
+#----------------------------------------#
+
+File Number: 79
+Name: descriptionfile.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 80
+Name: bluepageselements.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 81
+Name: simpleyesorno.pl
+
+Description:
+Demonstrates usage of simpleconditional statement using aloop.
+
+#----------------------------------------#
+
+File Number: 82
+Name: eh_dailylogger_script_r1.pl
+
+Description:
+To allow one to maintain a log of dailyactivities, and display that log as awebpage.  It is based on my perl webpagecreator scriptThis is the first working, functionalversion.NOTE: This is a user customizable versionbut not extremely user-friendly.
+
+#----------------------------------------#
+
+File Number: 83
+Name: which_remote_installserver.pl
+
+Description:
+Quickly searches the file install_servers.ez for an install server based on the location entered.
+
+#----------------------------------------#
+
+File Number: 84
+Name: searchbluepages.pl
+
+Description:
+Uses perl to search blue pages.  Parses environment variables based on the "=" sign.  Allow use to specify which variables to see.
+
+#----------------------------------------#
+
+File Number: 85
+Name: ehcgiexp1.pl
+
+Description:
+Not my script.  This appears to be a test script for parsing long/complex urls.  Does not work yet.
+
+#----------------------------------------#
+
+File Number: 86
+Name: weblinklistmaker.pl
+
+Description:
+To create a template for making subject-classified weblink list.  Output is an html document with table and hyperlinks.
+
+#----------------------------------------#
+
+File Number: 87
+Name: arrayslicetest.pl
+
+Description:
+Demonstrates usage of array slice.
+
+#----------------------------------------#
+
+File Number: 88
+Name: outfile.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 89
+Name: eh_createtblnapndcells_2.pl
+
+Description:
+Lets user maintain a log of daily events.  Very versatile and can be used as a guestbook, problem logger, etc...  This version does not format the page w/ the <BR> tag, so newline chars are not recognized and everything gets squished together.
+
+#----------------------------------------#
+
+File Number: 90
+Name: arraysorttest.pl
+
+Description:
+Create an array from user input, then sort and printsorted array list.
+
+#----------------------------------------#
+
+File Number: 91
+Name: checkcoreanderrpt.pl
+
+Description:
+Checks core file and error report and outputs an html page detailing the findings.
+
+#----------------------------------------#
+
+File Number: 92
+Name: desttextfile1.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 93
+Name: cshinprl_test1.pl
+
+Description:
+Simple demonstration of how to execute a shell command (csh) in a perl script; must use backticks.
+
+#----------------------------------------#
+
+File Number: 94
+Name: eh_template.pl
+
+Description:
+Just testing my script.  If it doesn't work I will have to revise it.
+
+#----------------------------------------#
+
+File Number: 95
+Name: perlcron_mcmahan.pl
+
+Description:
+Used as an automatic timer like unix cron function.  This is copied from the book "Automating Windows w/ Perl by Scott McMahan".
+
+#----------------------------------------#
+
+File Number: 96
+Name: ehdailylog.pl
+
+Description:
+Lets user maintain a daily log of activities and is veryversatile.  It can can be used as a guestbook, a bulletinboard, etc...NOTE:  This version is a MILESTONE.
+
+#----------------------------------------#
+
+File Number: 97
+Name: octal2ascii.pl
+
+Description:
+To create a table for converting octal to ascii.
+
+#----------------------------------------#
+
+File Number: 98
+Name: eh_createtblnapndcells_new_1.pl
+
+Description:
+Lets user maintain a daily log of activities and is veryversatile.  It can can be used as a guestbook, a bulletinboard, etc...NOTE:  This version is a MILESTONE.
+
+#----------------------------------------#
+
+File Number: 99
+Name: ehforeachperl_test.pl
+
+Description:
+Demonstrates reading lines from a file using a foreach loop.
+
+#----------------------------------------#
+
+File Number: 100
+Name: getjusturls.pl
+
+Description:
+Not my script. Not sure what it does.  Relies heavily of the Parse submod of the HTML module.
+
+#----------------------------------------#
+
+File Number: 101
+Name: openurlwperl.pl
+
+Description:
+Not (entirely) my script.  (I modified it some).  Demonstrates how to use the "system" command to open a program (i.e.: browser).
+
+#----------------------------------------#
+
+File Number: 102
+Name: eh_custissue_log.pl
+
+Description:
+This program uses a form interfacecoupled with my logging script tocreate an interface for the techto enter customer information.it then prints up a "flags" report,which it appends to the log,thereby creating a more total picture.Also, this version has the beginning of a printer diagnostic function.  The printer diagnostic writes host, queue, and problem description to an html log file, but currently does not have correct formatting.
+
+#----------------------------------------#
+
+File Number: 103
+Name: printfex1.pl
+
+Description:
+Not my script.  Demonstrates the printf command and formatting text.
+
+#----------------------------------------#
+
+File Number: 104
+Name: testhash.pl
+
+Description:
+Simple hash example.  Allows one to select one item from a 2 dimensional array.
+
+#----------------------------------------#
+
+File Number: 105
+Name: preincrtest.pl
+
+Description:
+This little piece of code starts at a value + 1, (in this case: 0),and increments by adding one until value is greater than 5.
+
+#----------------------------------------#
+
+File Number: 106
+Name: eh_simmatchhtml.pl
+
+Description:
+Pulls urls out of text (not html links)and writes them to a file, then opens thefile in a new browser window.
+
+#----------------------------------------#
+
+File Number: 107
+Name: ehmakeurltest.pl
+
+Description:
+Demonstrates various ways to concatenate/join text and variables together to create url's, ip's, etc...
+
+#----------------------------------------#
+
+File Number: 108
+Name: ehmakeurltest_multiopen.pl
+
+Description:
+Opens sequentially numbered urls automatically.  Usefull if you are on http://www.yahoo.com/news/article_a01_news.html and you know there are 5 more pages, you can set the start number to "01" and end to "06", then you enter the url formatting info and walla! -- up pops 6 pages of the article!
+
+#----------------------------------------#
+
+File Number: 109
+Name: ehmy1st_clntsd_imagemap.pl
+
+Description:
+Not my script.  Client side image map example.  Should write a new webpage to a file, then launch, or just do cgi.
+
+#----------------------------------------#
+
+File Number: 110
+Name: htmlenvvars.pl
+
+Description:
+Displays all environment variables for CGI's, etc...  Taken almost completely from the PERL FAQ.
+
+#----------------------------------------#
+
+File Number: 111
+Name: caseconv.pl
+
+Description:
+Demonstrates converting input to all lowercase or all uppercase.
+
+#----------------------------------------#
+
+File Number: 112
+Name: rwline.pl
+
+Description:
+Not my script.  Simple script that repeats a line of text (emulates the echo command), and auto-escapes (no ctrl-d necessary).
+
+#----------------------------------------#
+
+File Number: 113
+Name: rdlnprnttest.pl
+
+Description:
+Demonstrates how to read each line in a file with a while loop, and print them to the screen.  This script also contains the 'usage' usage.
+
+#----------------------------------------#
+
+File Number: 114
+Name: phonelist.pl
+
+Description:
+Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.
+
+#----------------------------------------#
+
+File Number: 115
+Name: getalllinksfromwebpage.pl
+
+Description:
+Based on the ActivePerl Documentation example for HTML_LinkExtor.  Gets a random link from a given url.
+
+#----------------------------------------#
+
+File Number: 116
+Name: plfaq_extracturls.pl
+
+Description:
+Not my script.  This is taken directly from Perl FAQ 9.  How to extract urls from an html source page.  It works!
+
+#----------------------------------------#
+
+File Number: 117
+Name: searchhelpfuld.pl
+
+Description:
+This little script searches a text file (in this case, the helful.d file) for any word the user enters and then displays every line containing that word.  Use a command line argument (i.e.: type the command and then a space and then the word you want to find.
+
+#----------------------------------------#
+
+File Number: 118
+Name: wrdcounttest.pl
+
+Description:
+Counts the number of words user enters and displaysresult.  Any two consecutive spaces are interpreted asa space and a word. Must use <ctrl> + d to exit.
+
+#----------------------------------------#
+
+File Number: 119
+Name: delvol_multi.pl
+
+Description:
+(Based on my c-shell script: eh_delvol2.2.csh).  Lets user input and save a list of volumes to delete and then deletes them one by one [actually, I think it marks them for deletion].Separates AFS volumes from DFS volumesin a list file by matching character  strings, and stores AFS volume names  in a new list file.
+
+#----------------------------------------#
+
+File Number: 120
+Name: eh_printerproblem_logger.pl
+
+Description:
+Lets user create and maintain log of printer problems daily.  Based on my generic logging script.
+
+#----------------------------------------#
+
+File Number: 121
+Name: eh_rdlnsfrmlsfl.pl
+
+Description:
+This program will allow me to figure out how to format output of standard shell commands and parse and manipulate so that I can rearrange the data any way I need to.
+
+#----------------------------------------#
+
+File Number: 122
+Name: eh_printerproblem_logger_v2.pl
+
+Description:
+Lets user maintain creates and maintainslog of printer problems.NOTE:  This is the second version; thefirst version doesn't work.
+
+#----------------------------------------#
+
+File Number: 123
+Name: pixmapgen.pl
+
+Description:
+Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.NOTE:		You must rename the file extensionto "acgi" for secure access, orcgi for non-secure.  Also, youmust copy this file to your cgi-bindir.
+
+#----------------------------------------#
+
+File Number: 124
+Name: ehreplacetest.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 125
+Name: eh.perl.dir.zip
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 126
+Name: uncataloged_htmlmatch.pl
+
+Description:
+Not my script.  Searches a local text file and extracts all links.  Taken from:http://www.ics.uci.edu/pub/websoft/libwww-perl/archive/1994/0123.html
+
+#----------------------------------------#
+
+File Number: 127
+Name: ehreplacetest_res.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 128
+Name: uncataloged_htmlmatch2.pl
+
+Description:
+Not my script.  Supposed to walk "...the web of files starting with those listed in "infile", and makes a list of titles and urls."  Doesn't work.Taken from:http://www.uic.edu/depts/accc/seminars/perlii/example.shtml
+
+#----------------------------------------#
+
+File Number: 129
+Name: uncataloged_suckurl1.pl
+
+Description:
+Not my script.  Code snippet that demonstrates a regex for sucking urls.  Doesn't work yet.   Taken from:http://www.peak.org/~regan/perl/
+
+#----------------------------------------#
+
+File Number: 130
+Name: testtextfile1.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 131
+Name: ehrplcnwlncharwbrtag_test.pl
+
+Description:
+Converts/Replaces new line characters to <BR> html sequence.  Uses source and destination files.
+
+#----------------------------------------#
+
+File Number: 132
+Name: DetectBrowserWronkiewicz.pl
+
+Description:
+Not my script.  Determines browser type (Netscape, Explorer, etc ...) by doing test on the HTTP_USER_AGENT cgi environment varible.
+
+#----------------------------------------#
+
+File Number: 133
+Name: getrndlnksfromwebpg.pl
+
+Description:
+Based on the ActivePerl Documentation example for HTML_LinkExtor.  Gets a random link from a given url. This script gives diagnostic output and tracing to show how it works (added by me).
+
+#----------------------------------------#
+
+File Number: 134
+Name: htmlenvvars_fancy_1.pl
+
+Description:
+Displays all environment variables for CGI's, etc...  Taken almost completely from the PERL FAQ.
+
+#----------------------------------------#
+
+File Number: 135
+Name: phonelist_r2_120401.pl
+
+Description:
+Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.
+
+#----------------------------------------#
+
+File Number: 136
+Name: phonelist_r3_120501.pl
+
+Description:
+Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.
+
+#----------------------------------------#
+
+File Number: 137
+Name: phonelist_r4_120601.pl
+
+Description:
+Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.
+
+#----------------------------------------#
+
+File Number: 138
+Name: ibmhelpphonemap.pl
+
+Description:
+Lets you type in what you are looking for and does a database search based on several search te rms, (not boolean).  Is not perfect but should be helpful.          For example:  If you want to know the 1-888-IBM-HELP path for Tivoli support, you would type in  "Tivoli" and it would bring up the response:          Tivoli:         4,3,8          Bada-bing, bada-boom!  No listening through multiple phone messages, just an instant path.          Will be a perl script at first, then try cgi, then try to incorporate a perl-web form interface.
+
+#----------------------------------------#
+
+File Number: 139
+Name: pixmapgen_ver1_workssofar.pl
+
+Description:
+Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.
+
+#----------------------------------------#
+
+File Number: 140
+Name: pixmapgen_ver2_worksok_121301.pl
+
+Description:
+Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.
+
+#----------------------------------------#
+
+File Number: 141
+Name: formattables.pl
+
+Description:
+Simple example of how to use the format command to define fixed character widths in columnar tables for printing.
+
+#----------------------------------------#
+
+File Number: 142
+Name: getprogdescr.pl
+
+Description:
+Reads one of my perl files and prints out the description text.
+
+#----------------------------------------#
+
+File Number: 143
+Name: pixmapgen_r3_workspixrtsz_121301.pl
+
+Description:
+Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.
+
+#----------------------------------------#
+
+File Number: 144
+Name: pixmapgen_r4_colandrowrt_repeats_121301.pl
+
+Description:
+Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.
+
+#----------------------------------------#
+
+File Number: 145
+Name: formattables_ex2.pl
+
+Description:
+Simple example of how to use the format command to define fixed character widths in columnar tables for printing. The first one didn't work. Second attempt.
+
+#----------------------------------------#
+
+File Number: 146
+Name: formattables_ex3.pl
+
+Description:
+Simple example of how to use the format command to define fixed character widths in columnar tables for printing. The first one didn't work. Second attempt.
+
+#----------------------------------------#
+
+File Number: 147
+Name: findperlfiles.pl
+
+Description:
+Searches the eh.perl.dir directory for all perl files and parses/manipulates them.  The output is saved in a comma-separated-value file (CSV) for importing into Spreadsheet program (Lotus 123, Excell, etc...).  Uses format and write commands.
+
+#----------------------------------------#
+
+File Number: 148
+Name: ehrplcnwlncharwbrtag_test_4.pl
+
+Description:
+Converts/Replaces new line characters to <BR> html sequence.  Uses source and destination files.
+
+#----------------------------------------#
+
+File Number: 149
+Name: getprogdescr_v2.pl
+
+Description:
+Reads one of my perl files and prints out the description text.
+
+#----------------------------------------#
+
+File Number: 150
+Name: htmlparsertest.pl
+
+Description:
+Demonstrates use of the HTML_Parser Module.  Doesn't work yet.
+
+#----------------------------------------#
+
+File Number: 151
+Name: linkextortest_1.pl
+
+Description:
+Simple demonstration of LinkExtor module.
+
+#----------------------------------------#
+
+File Number: 152
+Name: reverseordertest.pl
+
+Description:
+This script demonstrates how to print words that the userenters, in reverse order.  Must use <ctrl> + d to quit.
+
+#----------------------------------------#
+
+File Number: 153
+Name: howtolistdir.pl
+
+Description:
+Simple demonstration of how to list the contents of a directory in perl.
+
+#----------------------------------------#
+
+File Number: 154
+Name: testmultidimarray.pl
+
+Description:
+Not my script.  Uses multi-dimensional arrays and nested foreach loops to display boolean truth tables.
+
+#----------------------------------------#
+
+File Number: 155
+Name: cronlog.txt
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 156
+Name: sleeptimer1.pl
+
+Description:
+Uses the perl 'sleep' function to make a simple event timer.
+
+#----------------------------------------#
+
+File Number: 157
+Name: uncatalogued_eh_diffonlyinlatestfile.pl
+
+Description:
+This is the way to compare two text files in perl.  Where file2 is the newer of the two files.< = file1 and > = file2.This file works and has not been cataloged.
+
+#----------------------------------------#
+
+File Number: 158
+Name: testtodelete_1.pl
+
+Description:
+testing eh_makeplscrtmplt.pl script revision.
+
+#----------------------------------------#
+
+File Number: 159
+Name: testtodelete_2.pl
+
+Description:
+testing eh_makeplscrtmplt.pl script revision. revised to auto change permissions w/ chmod.
+
+#----------------------------------------#
+
+File Number: 160
+Name: simifelsifelse.pl
+
+Description:
+User enters two numbers and it gives msg if they are equal, and different msg if they are not.  Additionally, uses if comparators to determine if one of the numers is greater by one than the other, then reports it to the user.
+
+#----------------------------------------#
+
+File Number: 161
+Name: .__afs64FF
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 162
+Name: killallnetscapes.pl
+
+Description:
+Gets all process id's for netscape and then kills them all one by one.  Alleviates an individual having to cut and paste each process number by hand.
+
+#----------------------------------------#
+
+File Number: 163
+Name: renamefilesext.pl
+
+Description:
+Renames all files in a designated folder w/ some other extension.
+
+#----------------------------------------#
+
+File Number: 164
+Name: getprogdescr_v6_writecsv.pl
+
+Description:
+Reads one of my perl files and prints out the description text.Based on version 5 which works perfectly and makes a text log of each filename and its description.This version will write a csv-type filethat can be imported into a spreadsheet prog.It will use the double-colon separator.
+
+#----------------------------------------#
+
+File Number: 165
+Name: simifelse.pl
+
+Description:
+User enters two numbers and it gives msg if they are equal, and different msg if they are not.
+
+#----------------------------------------#
+
+File Number: 166
+Name: csvfile.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 167
+Name: csvfile.csv
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 168
+Name: salvage_volume.pl
+
+Description:
+Automates the steps involved in salvaging a volume.  Not finished
+
+#----------------------------------------#
+
+File Number: 169
+Name: startendtestfile.ez
+
+Description:
+( NO DESCRIPTION AVAILABLE )
+
+#----------------------------------------#
+
+File Number: 170
+Name: sleeptimer1.pl.CKP
+
+Description:
+Uses the perl 'sleep' function to make a simple event timer.
+
+#----------------------------------------#
+
+File Number: 171
+Name: func_getstdtimefrommiltime.pl
+
+Description:
+Function for converting military time to standard time.  Arguments are $hour.
+
+#----------------------------------------#
+
+File Number: 172
+Name: algebrafunc1.pl
+
+Description:
+Demonstrates processing a numeric function with perl using subroutines implemented as perl functions.
+

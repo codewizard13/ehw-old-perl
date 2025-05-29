@@ -1,0 +1,92 @@
+#!/usr/bin/perl
+#
+# Program:	dftest1wrsh.acgi
+# Creator:	Eric Hepperle
+# Date:		08/24/01
+#
+# Purpose:	Test script to help me write a
+#		script to display system info in
+#		real-time on a cgi page.
+#
+#		Uses the AIX "df -k" shell command and creates a webpage on the fly to output that data in the same format as it would print in a terminal window.
+#
+##################################################
+#
+# Revisions:
+#
+#	08/24/01
+#	  - Original.
+#
+#	09/13/01
+#	  - Added conversion routine that replaces
+#	    newlines w/ <br> tag.
+#	  - It still won't print spaced properly, so
+#	    I have also added a subroutine to split
+#	    the array at spaces.
+#	  - Derived a regular (non-cgi) perl version.
+#
+#
+#
+##################################################
+#
+# Notes:
+#	* The "acgi" extension creates a
+#	  secure cgi file and is used in
+#	  conjunction w/ secure web pages.
+#
+#	* It works!!!
+#
+##################################################
+#
+# Planned Improvements:
+#
+#	* Make the lines display correctly in page.
+#	  probably need a foreach loop to do it
+#	  right.
+#
+##################################################
+#
+# 
+#
+
+print "Content-type: text/html\n\n";
+
+$cur_host = "doomsday.rchland.ibm.com";
+$dfk_rsh = `rsh $cur_host df -k`;
+$dfkconv = $dfk_rsh;
+
+# convert and replace all newline chars in the var
+# with <br>.
+substr($dfkconv, 0) =~ s/\n/<BR>/g;
+
+
+print "<HTML>\n\n";
+print "<HEAD>\n\n";
+print "<TITLE>Hello World!!!</TITLE>\n";
+print "</HEAD>\n\n";
+print "<BODY BGCOLOR = IVORY>\n\n";
+print "\n";
+print "<H3>GOODBYE, World!</H3>\n";
+print "\n";
+
+print "<P>$cur_host = \"doomsday.rchland.ibm.com\"</P>\n";
+
+print "#\n";
+print "<P>\$dfk = \`df -k\`</P>\n";
+
+print "<P>rsh \$cur_host \$dfk</P>\n";
+print "\n";
+
+print "<P>rsh $cur_host $dfk</P>";
+print "\n";
+
+print "$dfk_rsh";
+
+print "\n";
+print "#----------------------------#\n";
+print "$dfkconv\n";
+print "\n";
+
+print "</BODY>\n\n";
+print "\n";
+print "</HTML>\n";

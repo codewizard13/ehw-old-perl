@@ -1,0 +1,63 @@
+#!/usr/bin/perl
+#
+# Program:	futval.pl
+# Creator:	Eric Hepperle
+# Date:		10/09/01
+#
+# Purpose:	Calculates future value of an investment based on an
+#		initial amount and on regular monthly payments.
+#
+#####################################################
+
+
+# Variables used:
+# ---------------
+#
+# fv, pmt, i, n, ans
+
+print "\n\n";
+print ("The formula for calculating the future value of an investment is:\n\n");
+print ("                           /               \\\n");
+print ("                           | (1 + i)^n - 1 |\n");
+print ("           fv = pmt(1 + i) | _____________ |\n");
+print ("                           |       i       |\n");
+print ("                           \\               /\n");
+print
+
+##########################################
+# DEFAULTS:
+##########################################
+#
+
+$pmt = 150;
+$i = .02;
+$n = 24;
+
+##########################################
+# INPUTS:
+##########################################
+#
+
+print "What is the monthly deposit amount? ";
+$pmt = <STDIN>;
+chomp $pmt;
+
+print "What is the interest rate as a decimal? (e.g.: 3% = 0.03): ";
+$i = <STDIN>;
+chomp $i;
+
+print "For how many months will you add to this fund? ";
+$n = <STDIN>;
+chomp $n;
+print "\n";
+
+# here is a block of code
+
+$fv = $pmt * (1 + $i) * (((1 + $i) ^ $n) / $i);   # formula
+
+# print $fv, "\n";
+print "The future value is $fv\n\n";
+
+exit;
+
+print "hello, world\n";

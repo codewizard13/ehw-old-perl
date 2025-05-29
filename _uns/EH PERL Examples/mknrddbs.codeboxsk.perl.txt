@@ -1,0 +1,59 @@
+Creating & Reading Flat Databases
+
+Well I'm glad to see that people are surfing this site, I just got an e-mail yesterday from someone requesting a tutorial on how to create and read flat databases, so I'm going to try to explain it without all the technical hype that people put around it. It's really quite simple and uses knowledge of forms in HTML along with the input converter I have under code snipplets and the file tutorial I constructed. So let's get started with a simple script and I'll explain what everything does:
+
+#!/usr/bin/perl
+#####################
+
+&ReadParse(*FORM);
+if ($FORM{'FUNCTION'} eq "ADD") {
+open(FILE, "count.txt");
+$number = <FILE>;
+close(FILE);
+$number++;
+open(FILE, ">database/$number.txt");
+print FILE "$FORM{'TheirName'}\n";
+print FILE "$FORM{'Theiremail'}\n";
+close(FILE);
+open(FILE, ">count.txt");
+print FILE $number;
+close(FILE);
+exit;
+}
+if ($FORM{'FUNCTION'} eq "READ") {
+open(FILE, "database/$FORM{'Number'}.txt");
+@namemail = <FILE>;
+close(FILE);
+print "$namemail[0]\n";
+print "$namemail[1]\n";
+exit;
+}
+
+(insert ReadParse subroutine here)
+
+Don't worry if it isn't clear to you yet you'll get what I'm doing as I go step by step ;). First line is the obvious pointing to where the PERL interprator is on your server. Next thing I did was call the ReadParse subroutine which, if you remember your code snipplet, was something that translated what the user submitted via a form into key->value pairs for your ease of use. If you don't know forms in HTML this may be a bit hard to understand, hopefully I'll write a word of wisdom or two on how to use forms.
+
+Now one way I like to organize what to tell a script to do is by using IF functions in conjunction with form fields. Consider, for example, if the HTML for this script was like this:
+
+<form method="POST" action="database.cgi">
+<input type="hidden" name="FUNCTION" value="ADD">
+<input type="text" name="TheirName">
+<br><input type="text" name="Theiremail">
+<input type="Submit" name="S1" value="Add To Database!">
+</form>
+
+That input type which is "hidden" is something that the user does not see. In this case the user does not see that when they submit to the script, it will assign the $FORM{'FUNCTION'} key to the value "ADD". Thus when the script gets to where it says IF the Form field "FUNCTION" had the value of "ADD", it will return true and execute whatever is in the brackets. However, if the form field "FUNCTION" says anything BUT "ADD", it will skip whatever is in the brackets and move on (this can be very handy for putting a bunch of functions in just one script).
+
+Now moving on, we just told the script that we'd like to ADD something so it starts executing the code in it. The first lesson I learned is that it is better to have a bunch of small text files for a flat database than one big one. If you have one big one there's a lot of things that can go wrong like if just ONE part of a big text file gets messed up then the whole thing could be ruined. Or if the script is accessed a lot of times the data inside the file could get mixed up or corrupt. That is why I usually like to organize my databases with a small file that keeps a number for the next database file I should write to. In this script, I told it to first open the "count.txt" file, to read its contents (which should be a number), put the value in a variable called "$number", and to finally close the file. The next line uses the "++" command which tells the program to incriment whatever the variable is by 1. Once I get this unique number, I opened a file in the database directory which was the number + the .txt extension (for instance if the number was 66, it would open "database/66.txt" for reading/writing). Note how I put in the ">" before the file name to indicate that I wanted it to create a file or overwrite any information already in the file. Then the script was told to print the form fields "TheirName" and "Theiremail" to the file and to close it. You may have noticed that after each variable I told it to put a "\n". This two character combo is what is known as the line terminator. Whenever there is a line terminator in the code, it tells it to go to the next line of the file. The best use I've found for this is that when reading from the file, by default, PERL splits the file by line seperators into an array (if you read from the file in an array). The last step of the reading was to print back to the count.txt the new number so it can incriment again on the next script call.
+
+Now reading is where you can figure out why the "\n" character is important. In essence, it splits the values of TheirName and Theiremail for when you read it again. In reading, you first opened whatever file was specified by the form field "Number". Next the script is told to read the contents of the File and put it into an array "namemail" with each value of the array determined by the \n seperator. This way, whatever was $FORM{'TheirName'} becomes the first value in the array and whatever was $FORM{'Theiremail'} becomes the second value in the array. After that, it's up to you whatever you want to do with it (Print it, manipulate it, whatever). 
+
+In the end remember to input that form parser subroutine given in my code snipplets or else it can't translate the form data as was instructed to in the subroutine call "&ReadParse(*FORM);"
+
+Well that's the basics of reading and writing to files to create a database. Stay tuned programmers because next lesson I just might tell you the more advanced concepts to keeping your database running clean and even searching the thing!
+ 
+
+
+[ Copyright 2000 Roupen Mouradian, Hot Magma ] 
+
+

@@ -1,0 +1,100 @@
+HELP: ActivePerl LWP::SIMPLE module doesn't get url.
+
+Greetings fellow perl Hackers:
+
+This one has been troubling me for several weeks.  I am trying to use the get url function of the LWP::SIMPLE module to snatch source HTML code from any given web page.  I am using Active State's ActivePerl application on my Windows ME machine at home.  I have written most of my perl programs at work on AIX, and I do my prelim testing there before I bring it home.  Every program/script I have written on AIX has been successfully ported to my Win32 environment.  Everyone except my 'geturl' script.
+
+
+EXAMPLE ONE:
+----------
+
+This is the first code I tried, which worked on UNIX but failed on my PC:
+
+#!/usr/bin/perl -w
+#
+# Program:	ehgeturlparsejpgngif.pl
+# Creator:	Eric Hepperle
+# Date:		06/27/01
+#
+# Purpose:	Rips the source code of any url and
+#		stores it as an html doc.
+#
+#########################################
+
+# calls the LWP module (WWW LIBRARY).
+use LWP::Simple;
+
+print "Enter a url to retrieve: ";
+$url = <STDIN>;
+
+# I have tried it with or without chomping $url.
+# Neither version works at home, but on UNIX it
+# doesn't seem to need the url chomped to be
+# successful
+#
+#chomp $url;
+print "\n";
+
+# This lets me assign the name of the doc.
+print "Enter the name to give the resulting html document: \n";
+print "(the program automatically adds \".html\" to the name)\n";
+$docname = <STDIN>;
+chomp $docname;
+
+$docname = $docname.".html";
+# another way to do this is:
+#    $docname = "$docname\.html";
+#
+
+
+# Print Results to screen:
+#
+
+#$file = get("$url");
+#@file = get ("$url");
+#@file = get ($url);
+$file = get ($url);
+
+print "The url is: \n";
+print "$url \n";
+print "\n";
+
+print "----------------------------------------\n";
+print "\n";
+
+print "The source code of the url is: \n";
+print "\n";
+print "----------------------------------------\n";
+print "\n";
+print "$file\n";
+
+print "\n";
+
+
+# Set HTML doc storage directory.
+$destdir = "c:/windows/desktop/eh_ripped_htmldocs";
+
+# assign a variable to address a fully-qualified
+# file path-name:
+#
+$webfile ="$destdir/$docname";
+
+open (WEBDOC, ">$webfile") || die "cannot open input file $webfile \n";
+
+   print WEBDOC "<HTML>This is the code ripped from $url: \n";
+   print WEBDOC "----------------------------------------\n";
+
+   # This is the line that writes the ripped html code to
+   # the newly created html doc.
+   #
+   print WEBDOC $file;
+
+close (WEBDOC);
+
+#----------
+# This line keeps the ActivePerl command line
+# interpreter from closing on completion.  Otherwise,
+# you see a DOS window pop-up and quickly blow away;
+# this line prevents that.
+#
+$hold = <STDIN>;

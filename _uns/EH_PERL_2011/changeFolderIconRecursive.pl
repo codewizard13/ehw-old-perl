@@ -1,0 +1,115 @@
+#!/usr/bin/perl
+
+################################################################################
+##
+## FILE:      changeFolderIconRecursive.pl
+## CREATOR:   Eric Hepperle
+## DATE:      09/16/11
+##
+## PURPOSE:   Process all files and subdirectories in a folder.
+##
+## RETURNS:   ...
+##
+## ARGUMENTS: ...
+##
+## NOTES:     09/16/11, 06:06 - Created file.
+##            (Note: Credit is given where significan code content is
+##            copied from other sources).
+##
+##                            - This program extends folderRecurse (should be
+##                              called listFolderContents.pl).  Will change the
+##                              folder icon in the root directory and every
+##                              subdirectory down the whole tree.
+##                              
+##                            - NOTE: This works as of 09/16/11!  However, it
+##                              only lists a url-ized linklist, (created as a
+##                              .html file in:
+##                              C:\Documents and Settings\nunya\Local Settings\
+##                                Temp in XP), but it demonstrates that the find
+##                              function is a good solution for traversing
+##                              and operating on files and subdirectories from
+##                              a start folder.
+##
+##
+################################################################################
+
+
+#
+# Use least-breakable code
+#
+use strict;
+use warnings;
+
+use File::Find;
+use URI::Escape;
+
+
+################################################################################
+##
+## MAIN
+##
+################################################################################
+
+
+main(@ARGV); # pull in command line arguments
+
+
+sub main
+{
+  message("Perl code goes here!");
+
+  my $dir = "s:/[programming]";
+
+  find(\&edits, $dir);
+  
+  sub edits() {
+    #original from http://www.gossland.com/course/files/recursive.html:
+    #(best explanation of File::Find!)
+    #print "File name is $_\n\t\tFull path is $File::Find::name\n";
+    
+    # remove "%20"
+    my $fullPathToFile = uri_unescape($File::Find::name);
+    
+    message("\$fullPathToFile = ");
+    
+    
+    # build a php file
+    print "<a href='$fullPathToFile' target='new'>$fullPathToFile</a><br />";
+  }
+
+}
+
+
+################################################################################
+##
+## SUBROUTINES
+##
+################################################################################
+
+
+#   message()
+#
+# prints a string to the console/screen and automatically removes newlines.
+#
+sub message
+{
+  my $m = shift or return;
+  print("$m\n");
+}
+
+
+#   error()
+#
+# gets system errors and prints to console/screen.
+#
+sub error
+{
+  my $e = shift || 'unkown error';
+  print(STDERR "$0: $e\n");
+  exit 0;
+}
+
+#
+#
+#
+#

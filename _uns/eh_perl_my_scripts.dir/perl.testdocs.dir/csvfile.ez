@@ -1,0 +1,252 @@
+1::.::( NO DESCRIPTION AVAILABLE )
+2::..::( NO DESCRIPTION AVAILABLE )
+3::simifelse.pl::User enters two numbers and it gives msg if they are equal, and different msg if they are not.  
+4::ch1p21ex6.pl::( NO DESCRIPTION AVAILABLE )
+5::simpif.pl::( NO DESCRIPTION AVAILABLE )
+6::mi2km.pl::( NO DESCRIPTION AVAILABLE )
+7::simintlim.pl::( NO DESCRIPTION AVAILABLE )
+8::simcomp.pl::( NO DESCRIPTION AVAILABLE )
+9::simifelsifelse.pl::( NO DESCRIPTION AVAILABLE )
+10::futval.pl::( NO DESCRIPTION AVAILABLE )
+11::ehex1.pl::( NO DESCRIPTION AVAILABLE )
+12::simwhile.pl::( NO DESCRIPTION AVAILABLE )
+13::simuntil.pl::( NO DESCRIPTION AVAILABLE )
+14::destination.pl::( NO DESCRIPTION AVAILABLE )
+15::eh1stsrceng.pl::( NO DESCRIPTION AVAILABLE )
+16::pwr2lst.pl::( NO DESCRIPTION AVAILABLE )
+17::countfiles.pl::Simple script.  Uses foreach loop and calibration to count the number of files, folders, etc in a given folder.  
+18::dftest1wrsh.pl::Test script to help me write a
+script to display system info in
+real-time on a cgi page.  Uses the AIX "df -k" shell command and creates a webpage on the fly to output that data in the same format as it would print in a terminal window.  
+19::arrayfrstdin.pl::( NO DESCRIPTION AVAILABLE )
+20::arrayprnall.pl::( NO DESCRIPTION AVAILABLE )
+21::linkextortest_1_w2ndrefpg.pl::Simple demonstration of HTML::LinkExtor module.  Gets all links found in the html doc and saves it to a file.  Checks for changes periodically (user specified), and if the page has changed it will record new info in a change_log.  There are 3 associated files:
+1)  $basehtmldoc:  where the code from
+indicated web page is stored. serves
+as a reference and all else is based off of this.  2)  $urllog: ($filename_$date_urllog.txt);  a file
+that stores the urls found as text.  3)  $urlpage: the HTML version where each url is
+made into a hyperlink.  4)  $
+
+22::getprogdescr_v3.pl::Reads one of my perl files and prints out the description text.  (3rd try)
+
+23::matchbetweenstartnend_perlfaq6.pl::Is unadulterated example from the Perl FAQ 6, found under : Here's code that finds everything between START and END in a paragraph: 
+
+24::arrayvaraslicesubscr.pl::( NO DESCRIPTION AVAILABLE )
+25::calccdrspd.pl::Calculates avg. recording speed for CD-R media
+based on capacity(MB) and actual record period
+length.  
+26::chkifflexists.pl::( NO DESCRIPTION AVAILABLE )
+27::ehgeturlparsepix_3.pl::Various pieces of code to try in the ehgeturlparsepix.pl script.  Rips HTML source code from a
+web page, then lets you compare.  that one to subsequent rips of the
+same page.  Differences are stored
+in a text file.  
+28::cpyfiletoanother.pl::( NO DESCRIPTION AVAILABLE )
+29::retrievematches.pl::Uses the "$1" variable as the default result of a matched string.  derived from the following usenet post:
+http://groups.google.com/groups?hl=en&selm=902862439.23601.0.nnrp-06.c2de775f%40news.demon.co.uk
+
+30::die2disperror.pl::( NO DESCRIPTION AVAILABLE )
+31::ehcreatefile.pl::( NO DESCRIPTION AVAILABLE )
+32::ehgeturl.pl::( NO DESCRIPTION AVAILABLE )
+33::eh_renameext.pl::I am having a problem trying to convert extensions w/ the following syntax:
+mv *.perl *.pl
+This is supposed to rename all files that end in .perl to 'whatever.pl'.  It just doesn't quite work.  This script should solve that problem.  
+34::wsinst_multi.pl::To automatically create a config file for
+doing multiple image creates for workstations
+with similar configurations.  I wrote a cshell script that does this
+called "wsinst_multi.makecfg.csh", and
+I think the perl code should be
+easier to write.  
+35::ehgeturlparsejpgngif.pl::( NO DESCRIPTION AVAILABLE )
+36::ehtst2.pl::( NO DESCRIPTION AVAILABLE )
+37::ehrdnprntlnsfrfile.pl::( NO DESCRIPTION AVAILABLE )
+38::wsinst_multi_wfulltracing.pl::To automatically create a config file for
+doing multiple image creates for workstations
+with similar configurations.  I wrote a cshell script that does this
+called "wsinst_multi.makecfg.csh", and
+I think the perl code should be
+easier to write.  
+39::joinsngllns.pl::( NO DESCRIPTION AVAILABLE )
+40::listinalist.pl::( NO DESCRIPTION AVAILABLE )
+41::merge2files.pl::( NO DESCRIPTION AVAILABLE )
+42::findallfromstart2fin.pl::Demonstrates using regular expressions to search a file for all text between a string $start, and $end.  
+43::prtlstfrmrange.pl::( NO DESCRIPTION AVAILABLE )
+44::randnumgen.pl::( NO DESCRIPTION AVAILABLE )
+45::rdfln2array.pl::( NO DESCRIPTION AVAILABLE )
+46::rdinpt2arry.pl::( NO DESCRIPTION AVAILABLE )
+47::startendtestfile.pl::( NO DESCRIPTION AVAILABLE )
+48::camelcode_frthinkgeek.pl::( NO DESCRIPTION AVAILABLE )
+49::getprogdescr_v4.pl::Reads one of my perl files and prints out the description text.  (3rd try)
+
+50::simpasswdcheck.pl::( NO DESCRIPTION AVAILABLE )
+51::srchnreplace.pl::( NO DESCRIPTION AVAILABLE )
+52::getprogdescr_v5.pl::Reads one of my perl files and prints out the description text.  Based on version 4 which works.  This version uses a foreach loop to read every file in the list
+
+53::wrtupcs2stderr.pl::( NO DESCRIPTION AVAILABLE )
+54::aix_led_errors.pl::( NO DESCRIPTION AVAILABLE )
+55::aixledcode_make.pl::( NO DESCRIPTION AVAILABLE )
+56::blue.pl::( NO DESCRIPTION AVAILABLE )
+57::crtsymsgpostsplit.pl::( NO DESCRIPTION AVAILABLE )
+58::daleyslotteryresults.pl::( NO DESCRIPTION AVAILABLE )
+59::eh_multiwsinst_perl.pl::Creates a config file and then runs the command
+to build wsinstall image from a the input
+parameters given by user.  
+60::eh_makeplscrtmplt.pl::Makes a new file w/ a user-specified name and based on a standard template designed by me (Eric Hepperle).  
+61::eh_waystoconcat.pl::( NO DESCRIPTION AVAILABLE )
+62::ehcpydosbinfile.pl::( NO DESCRIPTION AVAILABLE )
+63::arraycpyncomp.pl::( NO DESCRIPTION AVAILABLE )
+64::searchfileforavi.pl::( NO DESCRIPTION AVAILABLE )
+65::append2flwsubrtn.pl::( NO DESCRIPTION AVAILABLE )
+66::envvars.pl::( NO DESCRIPTION AVAILABLE )
+67::eh.pl::( NO DESCRIPTION AVAILABLE )
+68::mail_form.pl::( NO DESCRIPTION AVAILABLE )
+69::splittest.pl::simple program to demonstrate the split function of perl.  
+70::grepanarray.pl::( NO DESCRIPTION AVAILABLE )
+71::ehgeturlparsepix.pl::Rips HTML source code from a
+web page, then lets you compare.  that one to subsequent rips of the
+same page.  Differences are stored
+in a text file.  
+72::upcs2lwrcsconv.pl::( NO DESCRIPTION AVAILABLE )
+73::lwrcs2uprcsconv.pl::( NO DESCRIPTION AVAILABLE )
+74::dcefix.pl::Runs the dce repair procedure from helpful.d as an automated script.  DOES NOT WORK !!!
+
+75::Scratch.pl::( NO DESCRIPTION AVAILABLE )
+76::eh_mailpipedcmd.pl::Searches for id's owned by a user
+based on an employee serial
+entered	by the user.  Additionally, it converts the
+serial to uppercase, then lower
+case and does a modified search
+as well.  Finally, it will mail someone the
+results.  
+77::eh_rs6000diag_1.pl::( NO DESCRIPTION AVAILABLE )
+78::descriptionfile.pl::( NO DESCRIPTION AVAILABLE )
+79::foo.pl::( NO DESCRIPTION AVAILABLE )
+80::simpleyesorno.pl::Demonstrates usage of simple
+conditional statement using a
+loop.  
+81::eh_dailylogger_script_r1.pl::To allow one to maintain a log of daily
+activities, and display that log as a
+webpage.  It is based on my perl webpage
+creator script
+This is the first working, functional
+version.  NOTE: This is a user customizable version
+but not extremely user-friendly.  
+82::which_remote_installserver.pl::Quickly searches the file install_servers.ez for an install server based on the location entered.  
+83::searchbluepages.pl::Uses perl to search blue pages.  Parses environment variables based on the "=" sign.  Allow use to specify which variables to see.  
+84::bluepages.pl::( NO DESCRIPTION AVAILABLE )
+85::weblinklistmaker.pl::To create a template for making subject-classified weblink list.  Output is an html document with table and hyperlinks.  
+86::arrayslicetest.pl::( NO DESCRIPTION AVAILABLE )
+87::ehformreader.pl::( NO DESCRIPTION AVAILABLE )
+88::eh_createtblnapndcells_2.pl::Lets user maintain a log of daily events.  Very versatile and can be used as a guestbook, problem logger, etc...  This version does not format the page w/ the <BR> tag, so newline chars are not recognized and everything gets squished together.  
+89::arraysorttest.pl::( NO DESCRIPTION AVAILABLE )
+90::checkcoreanderrpt.pl::Checks core file and error report and outputs an html page detailing the findings.  
+91::arraytest1.pl::( NO DESCRIPTION AVAILABLE )
+92::concatlntest.pl::( NO DESCRIPTION AVAILABLE )
+93::cshinprl_test1.pl::( NO DESCRIPTION AVAILABLE )
+94::eh_template.pl::Just testing my script.  If it doesn't work I will have to revise it.  
+95::desttextfile1.pl::( NO DESCRIPTION AVAILABLE )
+96::ehdailylog.pl::Lets user maintain a daily log of activities and is very
+versatile.  It can can be used as a guestbook, a bulletin
+board, etc...  NOTE:  This version is a MILESTONE.  
+97::octal2ascii.pl::To create a table for converting octal to ascii.  
+98::eh_createtblnapndcells_new_1.pl::Lets user maintain a daily log of activities and is very
+versatile.  It can can be used as a guestbook, a bulletin
+board, etc...  NOTE:  This version is a MILESTONE.  
+99::ehforeachperl_test.pl::( NO DESCRIPTION AVAILABLE )
+100::.pl::( NO DESCRIPTION AVAILABLE )
+101::ehcgiexp1.pl::( NO DESCRIPTION AVAILABLE )
+102::eh_custissue_log.pl::This program uses a form interface
+coupled with my logging script to
+create an interface for the tech
+to enter customer information.  it then prints up a "flags" report,
+which it appends to the log,
+thereby creating a more total picture.  Also, this version has the beginning of a printer diagnostic function.  The printer diagnostic writes host, queue, and problem description to an html log file, but currently does not have correct formatting.  
+103::outfile.pl::( NO DESCRIPTION AVAILABLE )
+104::eh_printdiag.pl::( NO DESCRIPTION AVAILABLE )
+105::getjusturls.pl::( NO DESCRIPTION AVAILABLE )
+106::eh_simmatchhtml.pl::Pulls urls out of text (not html links)
+and writes them to a file, then opens the
+file in a new browser window.  
+
+107::ehmakeurltest.pl::Demonstrates various ways to concatenate/join text and variables together to create url's, ip's, etc...  
+
+
+108::ehmakeurltest_multiopen.pl::Opens sequentially numbered urls automatically.  Usefull if you are on http://www.yahoo.com/news/article_a01_news.html and you know there are 5 more pages, you can set the start number to "01" and end to "06", then you enter the url formatting info and walla! -- up pops 6 pages of the article!
+
+
+
+
+
+
+
+109::ehmy1st_clntsd_imagemap.pl::( NO DESCRIPTION AVAILABLE )
+110::htmlenvvars.pl::Displays all environment variables for CGI's, etc...  Taken almost completely from the PERL FAQ.  
+111::geturlsonly.pl::( NO DESCRIPTION AVAILABLE )
+112::openurlwperl.pl::( NO DESCRIPTION AVAILABLE )
+113::testhash.pl::( NO DESCRIPTION AVAILABLE )
+114::phonelist.pl::Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.  
+115::getalllinksfromwebpage.pl::Based on the ActivePerl Documentation example for HTML::LinkExtor.  Gets a random link from a given url.  
+116::plfaq_extracturls.pl::( NO DESCRIPTION AVAILABLE )
+117::searchhelpfuld.pl::( NO DESCRIPTION AVAILABLE )
+118::printfex1.pl::( NO DESCRIPTION AVAILABLE )
+119::eh_printerproblem_logger.pl::Lets user create and maintain log of printer problems daily.  Based on my generic logging script.  
+120::eh_rdlnsfrmlsfl.pl::This program will allow me to figure out how to format output of standard shell commands and parse and manipulate so that I can rearrange the data any way I need to.  
+121::delvol_multi.pl::(Based on my c-shell script: eh_delvol2.2.csh).  Lets user input and save a list of volumes to delete and then deletes them one by one [actually, I think it marks them for deletion].  Separates AFS volumes from DFS volumes
+in a list file by matching character  
+strings, and stores AFS volume names  
+in a new list file.  
+122::eh_printerproblem_logger_v2.pl::Lets user maintain creates and maintains
+log of printer problems.  NOTE:  This is the second version; the
+first version doesn't work.  
+123::pixmapgen.pl::Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.  NOTE:		You must rename the file extension
+to "acgi" for secure access, or
+cgi for non-secure.  Also, you
+must copy this file to your cgi-bin
+dir.  
+124::caseconv.pl::( NO DESCRIPTION AVAILABLE )
+125::eh.perl.dir.zip::( NO DESCRIPTION AVAILABLE )
+126::uncataloged_htmlmatch.pl::( NO DESCRIPTION AVAILABLE )
+127::ehreplacetest.pl::( NO DESCRIPTION AVAILABLE )
+128::uncataloged_htmlmatch2.pl::( NO DESCRIPTION AVAILABLE )
+129::uncataloged_suckurl1.pl::( NO DESCRIPTION AVAILABLE )
+130::rwline.pl::( NO DESCRIPTION AVAILABLE )
+131::ehreplacetest_res.pl::( NO DESCRIPTION AVAILABLE )
+132::ehrplcnwlncharwbrtag_test.pl::( NO DESCRIPTION AVAILABLE )
+133::DetectBrowserWronkiewicz.pl::( NO DESCRIPTION AVAILABLE )
+134::getrndlnksfromwebpg.pl::Based on the ActivePerl Documentation example for HTML::LinkExtor.  Gets a random link from a given url. This script gives diagnostic output and tracing to show how it works (added by me).  
+135::htmlenvvars_fancy_1.pl::Displays all environment variables for CGI's, etc...  Taken almost completely from the PERL FAQ.  
+136::phonelist_r2_120401.pl::Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.  
+137::phonelist_r3_120501.pl::Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.  
+138::phonelist_r4_120601.pl::Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.  
+139::ibmhelpphonemap.pl::Lets you type in what you are looking for and does a database search based on several search te rms, (not boolean).  Is not perfect but should be helpful.          For example:  If you want to know the 1-888-IBM-HELP path for Tivoli support, you would type in  "Tivoli" and it would bring up the response:          Tivoli:         4,3,8          Bada-bing, bada-boom!  No listening through multiple phone messages, just an instant path.          Will be a perl script at first, then try cgi, then try to incorporate a perl-web form interface.  
+140::pixmapgen_ver1_workssofar.pl::Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.  
+141::pixmapgen_ver2_worksok_121301.pl::Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.  
+142::formattables.pl::Simple example of how to use the format command to define fixed character widths in columnar tables for printing.  
+143::getprogdescr.pl::Reads one of my perl files and prints out the description text.  
+144::pixmapgen_r3_workspixrtsz_121301.pl::Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.  
+145::pixmapgen_r4_colandrowrt_repeats_121301.pl::Will create a table of rowlength = 6, and row count = total pix count / 6, and if there is a remainder, add one.  This is an on the fly picture map generator.  
+146::formattables_ex2.pl::Simple example of how to use the format command to define fixed character widths in columnar tables for printing. The first one didn't work. Second attempt.  
+147::formattables_ex3.pl::Simple example of how to use the format command to define fixed character widths in columnar tables for printing. The first one didn't work. Second attempt.  
+148::findperlfiles.pl::Searches the eh.perl.dir directory for all perl files and parses/manipulates them.  The output is saved in a comma-separated-value file (CSV) for importing into Spreadsheet program (Lotus 123, Excell, etc...).  Uses format and write commands.  
+149::ehrplcnwlncharwbrtag_test_4.pl::Converts/Replaces new line characters to <BR> html sequence.  Uses source and destination files.  
+150::getprogdescr_v2.pl::Reads one of my perl files and prints out the description text.  
+151::htmlparsertest.pl::Demonstrates use of the HTML::Parser Module.  Doesn't work yet.  
+152::linkextortest_1.pl::Simple demonstration of HTML::LinkExtor module.  
+153::preincrtest.pl::( NO DESCRIPTION AVAILABLE )
+154::rdlnprnttest.pl::( NO DESCRIPTION AVAILABLE )
+155::reverseordertest.pl::( NO DESCRIPTION AVAILABLE )
+156::testmultidimarray.pl::( NO DESCRIPTION AVAILABLE )
+157::testtextfile1.pl::( NO DESCRIPTION AVAILABLE )
+158::testtodelete_1.pl::testing eh_makeplscrtmplt.pl script revision.  
+159::testtodelete_2.pl::testing eh_makeplscrtmplt.pl script revision. revised to auto change permissions w/ chmod.  
+160::uncatalogued_eh_diffonlyinlatestfile.pl::( NO DESCRIPTION AVAILABLE )
+161::wrdcounttest.pl::( NO DESCRIPTION AVAILABLE )
+162::howtolistdir.pl::( NO DESCRIPTION AVAILABLE )
+163::rename2::Not my script.  Taken from : http://www.evolt.org/article/Renaming_Files_with_Perl/17/351/
+
+164::renamefilesext.pl::Renames all files in a designated folder w/ some other extension.  
+165::rename3.pl::Rename files using split.  
+166::descriptionfile.ez::( NO DESCRIPTION AVAILABLE )
+167::getprogdescr_v6_writecsv.pl::Reads one of my perl files and prints out the description text.  Based on version 5 which works perfectly and makes a text log of each filename and its description.  This version will write a csv-type file
+that can be imported into a spreadsheet prog.  It will use the "::" separator.  
+168::csvfile.ez::( NO DESCRIPTION AVAILABLE )
+169::.__afsD506::( NO DESCRIPTION AVAILABLE )

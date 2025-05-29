@@ -1,0 +1,60 @@
+Getting Started:
+
+Sure all the tutorials that we provide are cool and explain how to use many useful features of PERL, but then you may be thinking "Well how the heck do I put this into my webpage?". That is why this tutorial will attempt to explain how you make your PERL scripts and use them in your server!
+
+First things first, people always e-mail me asking where they can get a PERL compiler or a PERL editor. You don't need an editor, you just need to use notepad and upload the plain ASCII .cgi or .pl file. This is because PERL scripts are compiled at the server end everytime someone accesses it. If you are using a UNIX system, you will have to set permissions for the script, usually you want to CHMOD your PERL scripts to 755 which gives full execute and read access, but limits writing to the file only to you and server admin (that way no one can accidentally mess with your script). On NT you don't have to worry about permissions it is set up automatically by the server administration.
+
+Now the next biggest question I get is "I understand how you use the PERL commands, but how do you make it work on the web?". Well it's very simple, so let's try to explain it by how a browser acts: When you ask for a URL such as http://www.mysite.com/referrers.pl, the browser sends a request to the server saying "Get me the referrers.pl file!", the server then realizes "Oh it's a .pl file which is a PERL script, I better compile it using the compiler specified on the first line of the script". Next, the server compiles it and executes it and returns the results. Your browser needs "headers" to know what type of results it is going to get. Hence why you see in some of the scripts "Content-type: text/html\n\n";. This is because you can send a lot of different files via PERL. I've even seen examples of streaming MP3 files via PERL so you don't have to wait for the whole song to finish downloading!
+
+The most useful type of program you will write though will be one that sends HTML information to the browser. 99% of PERL scripts do this so let's just go over a simple script which would show how to send information to the browser. This will use some higher concepts such as opening files to show you how you can dynamically change the webpage everytime someone visits.
+
+#!/usr/bin/perl
+##################
+
+#get the current hit count from the
+# counter file.
+open(FILE, "counter.txt");
+    $visits = <FILE>;
+close(FILE);
+
+# Incriment the hit count by 1
+$visits++;
+
+# Overwrite the old number with the new
+# number which is 1 higher.
+open(FILE, ">counter.txt");
+    print FILE $visits;
+close(FILE);
+
+print "Content-type: text/html\n\n";
+print "<html><body>";
+if ($visits == 1000) {
+    print "<font face='Arial,Verdana'>Congratulations, you are the 1000th visitor to this site!";
+}
+elsif ($visits == 1000000) {
+    print "<font face='Arial,Verdana'>Whoa! You are the 1,000,000th visitor to this site!";
+}
+else {
+    print "<font face='Arial,Verdana'>Bah, you are only the $visits visitor to this site...";
+}
+print "</body></html>";
+exit;
+
+To start off the script's execution, I simply did some opening, reading and writing of files to incriment the number of visitors to the site by one. Next is where the interesting part comes in, the program sends header information back to the browser stating "Hey HTML page is coming to you!" when it does the print "Content-type: text/html\n\n"; statement. After that all you really need to do is output HTML tags in print ""; commands. Here's another useful trick if you have a large block of HTML code where you don't need to do any PERL execution or condition statements in:
+
+print <<"till_end_of_lines";
+    <html><body>
+        <font face="Verdana,Arial">Congratulations you are the $visits visitor to this site.
+        <br><br>Thank you for visiting our site please be sure to drop us a line at our <a href="feedback.html">Feedback Page</a>!
+    </body></html>
+till_end_of_lines
+
+The "print <<" command indicates that you want the entire block of code to be sent to the browser until the string after the << sign is encountered again on a single line by itself. So it goes through the script and finally, after </html> it sees "till_end_of_lines" and says "Hey stop there."
+
+This concludes the tutorial since the *best* way I can suggest to learn this is to actually practice it on your hosting account. Try doing different commands and send some results to the browser and see how it all is connected! If you really want to experiment try sending a jpg file to the browser, the syntax for telling the browser its going to get one is: Content-type: image/jpeg\n\n... that is a bit complex though!
+ 
+
+
+[ Copyright 2000 Roupen Mouradian, Hot Magma ] 
+
+

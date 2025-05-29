@@ -1,0 +1,192 @@
+#!/usr/bin/perl
+#
+#
+# Program:	cp.passwd.pl.notfin.v2
+# Creator:	Eric Hepperle
+# Date:		01/22/02
+#
+# Purpose:	Project I am doing for Tom Sheffrey.  Taking his cp.passwd ksh script and rewriting the code in perl, to be succinct and more efficient.
+#
+###################################################
+#
+# Revisions:
+#
+#	- Original:  01/22/02
+#
+#	01/23/02 - cp.passwd.pl.notfin.v2 created
+#		   as backup.
+#
+#
+#
+###################################################
+#
+# Planned Improvements:
+#
+###################################################
+#
+
+
+print "\n\n";
+print "This program is called cp.passwd.pl\n\n";
+
+use File::Copy;
+
+
+###############################################################################
+# This is the Main section                                                  ###
+###############################################################################
+
+
+# define source file:
+$source = "/afs/rchland.ibm.com/common/prod/etc/passwd";
+
+# define destination file:
+$dest = "/tmp/passwd";
+
+# if source passwd file exists in common/prod/etc, then ...
+if (-e $source) {
+
+   # run db2safecopy sub with source of passwd file to copy to /tmp on local.
+   db2safecopy($source, $dest);
+
+
+
+#------------ BEGIN SUB ----------------------------/
+
+   sub db2safecopy {
+
+   # define process id file.
+   $pidfile = "/tmp/$$";
+
+   # copy (with acls) and check return code.
+   # copy ($source, $pidfile); 
+   #
+   # could not find a way to copy w/ permissions intact in perl.
+   #
+   $recordpid = `cp -p $source $pidfile`;
+
+   $recordpid;
+
+   # if last process was successful.
+   if ($? == 0) {
+
+      # are $source and $pidfile exactly same?
+      # cmp -s $source $pidfile
+      $verify = ($source cmp $pidfile);
+
+      $verify;
+
+      # if last process was successful.
+      if ($? == 0) {
+
+         # check for 0 length file
+         if (-s $pidfile) {
+
+# ????      copy ($dest, $dest.old) >/dev/null		????
+
+            # Reformat and print the line where the first field is "root":
+            #-------------------------------------------------------------
+            # reads the processid file (passwd copy), defines colon as the field separator, and
+	    # prints output in the following format:
+            #
+            # root:!:0:10:System Root,289085-:/:/bin/csh
+            #
+            # whereas, original format is:
+	    #
+            # root 0 10 System Root,289085- / /bin/csh
+            #
+            # cat $pidfile | awk -F: '$1=="root"{printf "%s:\!:%s:%s:%s:%s:%s\n", $1,$3,$4,$5,$6,$7;next}{print}'  > $pidfile.sv
+            #
+
+            
+
+	    # copy $pidfile.sv to destination file.
+            copy ("$pidfile.sv", $dest);
+
+            # make sure the mv worked; if last process was successful.
+            if ($? == 0) {
+
+               # change owner of destination file to root.system.
+               `chown root.system $dest`;
+
+	       # remove old destination file w/o prompting.
+               # rm -f $dest.old
+               #
+               # (unlink is the command used to delete a file in perl.)
+               #
+               unlink("$dest.old");
+
+            } else {
+
+               # the mv failed, for some reason
+              unlink($dest);
+
+              # copy $dest.old to $dest.
+	      copy ($dest.old, $dest);
+
+            }
+
+         }
+
+      }
+
+   }
+
+   unlink($pidfile);
+
+   # update the inode table ???
+   `sync`;
+
+   }
+
+
+#------------------- END SUB ----------------------------/
+
+
+
+
+   # foreach line in source file.  ???
+   foreach $line (@
+
+      IFS=:
+
+      set -- $line
+
+      grep -v "${1}:" /tmp/passwd >/tmp/passwd.$$
+
+      cp /tmp/passwd.$$ /tmp/passwd
+
+   done </etc/passwd.local
+
+   cp /etc/passwd.local /tmp/passwd.new
+
+   cat /tmp/passwd >> /tmp/passwd.new
+
+   mv /tmp/passwd.new /etc/passwd
+
+   chown root /etc/passwd
+
+   chmod 644 /etc/passwd
+
+   rm /tmp/passwd
+
+   rm /tmp/passwd.$$
+
+   /etc/mkpasswd -d
+
+   /etc/mkpasswd -f
+
+}
+
+##################################################################
+# After we update the passwd file, update the group file         #
+##################################################################
+/home/scripts/get.afs.groups
+
+
+
+###################################################
+# SUBROUTINES:
+###################################################
+
+

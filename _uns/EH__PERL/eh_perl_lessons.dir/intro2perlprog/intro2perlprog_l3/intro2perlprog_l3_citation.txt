@@ -1,0 +1,10 @@
+INTRODUCTION TO PERL PROGRAMMING: Level 3 Keynote
+     =================================================
+     Greiss, Dr. Hany. 1998. Provo, UT: Keystone Learning
+     Systems.
+
+
+(The contents of the folder are derived from code gleaned
+from this workbook)
+
+--------------------------------------------------------/

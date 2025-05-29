@@ -1,0 +1,47 @@
+Created by:	Eric Hepperle
+Date:		09/17/2001
+
+===================================================================
+
+HELP!  Having Trouble concatenating or joining and making or building  a url with ActivePerl and the '.' operator.
+----------------------------------------------------------------------------------------------------------------------------------
+
+I have what seems like a simple question.   It has nothing to do with Web pages or CGI in the strictest sense, but it is definitely a Perl issue:
+
+I am having significant trouble utilizing the standard "dot" concatenation operator to "build" a URL.   Here is an illustration of what I am trying to do,  the output desired, and the actual output:
+
+
+The url will be of the form:
+
+$rtpath/$picrt$count.$ext
+
+So, here is what these values would be and the url
+that should be produced:
+
+#######################################
+
+Given:
+------
+
+$rtpath = "http://www.news.com"
+
+$picrt = "pageq_"
+
+$count = 06 (or whatever the count is at the time,)
+
+$ext = "html"
+
+then, the url produced should be:
+
+http://www.news.com/pageq_06.html
+
+#######################################
+
+The actual url that comes out is:
+6.html
+
+... which is obviously quite useless.
+
+I hope someone out there recognizes what I am trying to do and can find what I am missing.  It occurs to me that it may have something to do with the underscore "_" character juxtaposed in the output to the ".", and though I have searched the groups for answers, I always find the wrong things -- stuff about concat in tcl, Perl Bulids, etc...  I am at an impass and so I turned to the lerned sages of this holy place.
+
+Any help is appreciated!

@@ -1,0 +1,46 @@
+#!/usr/bin/perl -w
+#
+
+print "\n";
+
+# equals (a,b,c)
+@bob1 = ('a','b','c');
+
+# equals (1,2, three)
+@bob2 = (1,2,"three");
+
+# equals (1,2,3,4,5,6,7,8,9,10)
+@bob3 = (1..10);
+
+# equals (2.3,3.3,4.3,5.3)
+@bob4 = (2.3 .. 5.3);
+
+# equals (3,4,5,6,7,11,15)
+@bob5 = (3..7,11,15);
+
+# will be determined by current values of $x & $y
+@bob6 = ($x..y);
+
+# equals (5.2,6.2,7.2,8.2,9.2,10.1)
+@bob7 = (5.2 .. 10.1);
+
+@arry = ("bob", "doug", "sleepy", "bashful");
+
+# "Quote Word (qw) function can be used to create lists of string variables without all the quotation marks and commas required."
+
+# -- INTRODUCTION TO PERL PROGRAMMING: Level 3 Keynote
+     =================================================
+     Greiss, Dr. Hany. 1998. Provo, UT: Keystone Learning
+     Systems.
+
+EXAMPLE:
+========
+
+@arry = qw (bob doug sleepy bashful);
+
+
+
+
+
+#----------
+$hold = <STDIN>;

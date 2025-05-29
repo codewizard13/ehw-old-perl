@@ -1,0 +1,317 @@
+#!/usr/bin/perl
+#
+#
+# Program:	phonelist.pl
+# Creator:	Eric Hepperle
+# Date:		12/02/01
+#
+# Purpose:	Based on my searchbluepages.pl script.  Prints up a table of user info for most common users calling or being called by the AIX/AFS helpdesk.  Copy to cgi-bin folder.
+#
+###################################################
+#
+# Revisions:
+#
+#	- Original:  12/02/01
+#
+#
+#
+###################################################
+#
+# Planned Improvements:
+#
+###################################################
+#
+
+print "Content-type: text/html", "\n\n";
+print "<body bgcolor = black text = lime alink = blue vlink = violet >\n";
+
+
+# Define Styles:
+
+#print "<STYLE>\n";
+
+print "\.time \{font-family:  \"Gill Sans\", \"Tahoma\", \"Arial\"\; font-size: 10pt\; color: red\}\n";
+print "\.tiny \{ font-family:  \"Tahoma\",\"Gill Sans\",\"Arial\"\; font-size: 4pt\; color: lightslateblue\}\n";
+print "\.tinyp1 \{ font-family:  \"Tahoma\",\"Gill Sans\",\"Arial\"\; font-size: 5pt\; color: lightslateblue\}\n";
+print "\.tndstamp \{ font-family:  \"Tahoma\",\"Gill Sans\",\"Arial\"\; font-size: 10pt\; color: lightslateblue\}\n";
+print "\.regular \{ font-family:  \"Tahoma\",\"Arial\"\; font-size: 9.5pt\; color: black\}\n";
+
+#print "</STYLE>\n";
+
+print "\n\n";
+print "This program is called phonelist.pl<BR>\n";
+print "\n";
+
+$varlist = "/afs/rchland.ibm.com/usr3/v2cib484/eh.perl.dir/bluepages.envvarlist.ez";
+$sernum_file = "/afs/rchland.ibm.com/usr3/v2cib484/tmp/sernum_file.ez";
+
+
+
+foreach $sernum (@serialarray){
+
+   chomp $sernum;
+
+   print "sernum = $sernum<BR>\n";
+
+   &makeuserlogfrombluepages;
+
+   &assigntablevalues;
+
+}
+
+
+#-------------------------
+# Keeps window open in Win32 Perl.
+$hold = <STDIN>;
+
+#--------------------------------------
+# SUBROUTINES:
+#--------------------------------------
+
+
+sub makeuserlogfrombluepages {
+
+   $getuserinfo = `ldapsearch -h bluepages.ibm.com -b "ou=bluepages,o=ibm.com" ibmserialnumber=$sernum`;
+
+   # Tracing:
+   print $getuserinfo;
+   print "\n";
+
+   $empinfo = "/afs/rchland.ibm.com/usr3/v2cib484/tmp/bluepages.$sernum";
+
+   open (EMPINFO, ">$empinfo");
+
+      print EMPINFO $getuserinfo;
+
+   close (EMPINFO);
+
+}
+
+
+sub assigntablevalues {
+
+   # open employee file for reading.
+   open (EMPINFO, "$empinfo");
+
+      # store file contents in an array.
+      @emp_info = <EMPINFO>;
+
+
+   close (EMPINFO);
+
+      foreach $line (@emp_info) {
+
+         @linearray = split(/=/, $line); 
+
+         # Assign descriptive variables to array elements .........
+         $identifier = @linearray[0];
+         $value = @linearray[1];
+
+         # print "line = $line\n";
+         print "\$identifier:\t $identifier --  \$value:\t $value \n";
+
+
+         # Assign the actual values for each table entry:
+         #
+         if ($identifier eq "sn") {
+
+            $lastname = $value;
+            chomp $lastname;
+
+	 }
+
+         if ($identifier eq "givenname") {
+
+            $firstname = $value;
+            chomp $firstname;
+
+	 }
+
+         if ($identifier eq "ibmserialnumber") {
+
+            $sernum = $value;
+            chomp $sernum;
+
+	 }
+
+         if ($identifier eq "tieline") {
+
+            chomp $value;
+
+            $ext = substr("$value", -6, 6);
+
+            $prefix = substr("$value", 0, 3);
+
+            # if the first 3 numbers are 553, then
+            # phone is a rochester number:
+            # 
+            if ($prefix eq "553"){
+
+               $phone = $ext;
+
+	    } else {
+
+               $phone = $value;
+
+	    }             
+
+
+	 }
+
+         if ($identifier eq "mail") {
+
+            $email = $value;
+            chomp $email;
+
+	 }
+
+      }
+
+   print "\n\n";
+
+   # !!!  !!!  !!! ...--->
+   #
+   # This part shows variables are correct and prints in a row:
+   print "$lastname  $firstname  $sernum  $ext  $email\n\n";
+
+# Create the table:
+&createtable;
+
+
+}
+
+
+sub createtable {
+
+   foreach $line (@serialarray) {
+
+      chomp $line;
+
+      print "<TABLE BORDER = 2>\n";
+      print "<TR>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP><H6 CLASS = \"tndstamp\"><B>$lastname</B></TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$firstname</TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$sernum</TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$phone</TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$email</TD>\n";
+      print "</TR>\n";
+      print "</TABLE>\n";
+
+    }
+
+}
+
+
+#------------------------------------
+
+foreach $serial (@sernumfile){
+
+   # remove new line character.
+   chomp $serial;
+
+   $getuserinfo = `ldapsearch -h bluepages.ibm.com -b "ou=bluepages,o=ibm.com" ibmserialnumber=$serial`;
+
+   $empinfo = "/afs/rchland.ibm.com/usr3/v2cib484/tmp/bluepgsrecords/bluepages.$serial";
+
+
+   # write ldap search results to a file.
+   open (EMPINFO, ">$empinfo");
+
+      print EMPINFO $getuserinfo;
+
+      # store employee info file in an array.
+      @userinfoarray = <EMPINFO>;	
+
+   close (EMPINFO);
+
+
+   # for each line in the ldap search...
+   foreach $line (@userinfoarray){
+
+      # remove new line character.
+      chomp $line;
+
+      @linearray = split(/=/, $line); 
+
+      # Assign descriptive variables to array elements .........
+      $identifier = @linearray[0];
+      $value = @linearray[1];
+
+      # print "line = $line\n";
+      print "\$identifier:\t $identifier --  \$value:\t $value \n";
+
+
+      # Assign the actual values for each table entry:
+      #
+      if ($identifier eq "sn") {
+
+         $lastname = $value;
+         chomp $lastname;
+
+      }
+
+      if ($identifier eq "givenname") {
+
+         $firstname = $value;
+         chomp $firstname;
+
+      }
+
+      if ($identifier eq "ibmserialnumber") {
+
+         $sernum = $value;
+         chomp $sernum;
+
+      }
+
+      if ($identifier eq "tieline") {
+
+         chomp $value;
+
+         $ext = substr("$value", -6, 6);
+
+         $prefix = substr("$value", 0, 3);
+
+         # if the first 3 numbers are 553, then
+         # phone is a rochester number:
+         # 
+         if ($prefix eq "553"){
+
+            $phone = $ext;
+
+	 } else {
+
+         $phone = $value;
+
+	 }             
+
+      }
+
+      if ($identifier eq "mail") {
+
+         $email = $value;
+         chomp $email;
+
+      }
+
+   }
+
+      print "<TABLE BORDER = 2>\n";
+      print "<TR>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP><H6 CLASS = \"tndstamp\"><B>$lastname</B></TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$firstname</TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$sernum</TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$phone</TD>\n";
+      print "<TD WIDTH = 200 VALIGN = TOP>$email</TD>\n";
+      print "</TR>\n";
+      print "</TABLE>\n";
+
+  
+
+}
+
+
+
+
+
+
