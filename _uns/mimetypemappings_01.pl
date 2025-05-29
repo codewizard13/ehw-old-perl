@@ -1,0 +1,1 @@
+app->types->type(rdf => 'application/rdf+xml');

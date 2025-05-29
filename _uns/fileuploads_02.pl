@@ -1,0 +1,2 @@
+# Increase limit to 1GB
+$ENV{MOJO_MAX_MESSAGE_SIZE} = 1073741824;
