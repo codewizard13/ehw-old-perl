@@ -1,0 +1,125 @@
+#!/usr/bin/perl
+#
+#
+# Program:	darkcolortest.pl
+# Creator:	Eric Hepperle
+# Date:		02/05/02
+#
+# Purpose:	Generates an html doc w/ black background, and repeats a sample text paragraph in various colors.
+#
+###################################################
+#
+# Revisions:
+#
+#	- Original:  02/05/02
+#
+#
+#
+###################################################
+#
+# Planned Improvements:
+#
+###################################################
+#
+
+
+print "Content-type: text/html\n\n";
+
+# build main html headers:
+#
+print "<HTML>\n\n";
+print "<HEAD>\n";
+print "<TITLE>DARK COLOR TEST</TITLE>\n";
+print "</HEAD>\n\n";
+print "<BODY BGCOLOR = BLACK TEXT = LIME>\n\n";
+
+
+print "\n\n";
+print "This program is called darkcolortest.pl\n\n";
+
+@testtext = "The Hulk\n\nBruce Banner, a brilliant scientist employed to create weapons for the government, Banner was out of touch with his emotions when during an experimental test finds himself caught in a \"gamma bomb\" blast while he selflessly rushed to the rescue of a teenager who had wandered onto the testing field. Banner was struck full-force by the bomb blast.He survived, but was irradiated by the deadly gamma energy and is turned into an incredible hulking creature known as the HULK. Now Banner must battle with his inner demons and wrestle with controlling his anger.\n\nCreated by Stan Lee & Jack Kirby in 1962 for Marvel Comics.";
+
+#$hexcolor = pack%x
+
+#$hexnum = sprintf("%02X", ord($s));
+
+$decimal = unpack('c', pack('B8', '10110110'));
+print "\$decimal = $decimal\n\n";
+
+$int = hex("DEADBEEF");
+print "\$int = $int\n\n";
+
+$dec = sprintf("%d", $int);
+print "\$dec = $dec\n\n";
+
+&genhexcolors;
+
+# print the test string in each color.
+$count = 1;
+
+
+
+foreach $color (@hexcolors) {
+
+   print "<BR><BR>\n";
+   print "<FONT COLOR = LIME>HEX COLOR:\t $color</FONT><BR>\n\n";
+   print "<FONT COLOR = \"#$color\">@testtext</FONT>\n\n";
+
+}
+
+print "</BODY>\n";
+print "</HTML>\n";
+
+
+
+
+
+
+
+sub genhexcolors {
+
+   for $d1 (0..15) {      
+
+      $hex1 = sprintf("%X", $d1);
+      #
+      # TRACING:
+      print "\$hex1 =\t $hex1\n\n";
+      $dd1 = "$hex1$hex1";
+  
+
+      for $d2 (0..15) {
+
+         $hex2 = sprintf("%X", $d2);
+         #
+         # TRACING:
+         # print "\$hex2 =\t $hex2\n\n";
+         $dd2 = "$hex2$hex2";
+
+         for $d3 (0..15) {
+
+            $hex3 = sprintf("%X", $d3);
+            #
+            # TRACING:
+            # print "\$hex3 =\t $hex3\n\n";
+            $dd3 = "$hex3$hex3";
+    
+            $hexcolor = $dd1.$dd2.$dd3;
+            #
+            # TRACING:
+            # print "\$hexcolor =\t $hexcolor\n\n";
+
+            @hexcolors = (@hexcolors, $hexcolor);
+
+         }
+
+      }
+
+   }
+
+   # TRACING:
+   #print "HEX COLORS =\n\n";
+   #print "======================================\n\n";
+   #print "@hexcolors\n\n"; 
+
+}
+

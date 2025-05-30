@@ -1,0 +1,41 @@
+Randomizing & Banner Rotator
+
+Someone requested how you tell PERL to randomize for a banner rotator so let's make a lesson, huh? Ok the syntax for randomization is rather simple. Here's a sample script that generates a random number from 1-10.
+
+#!/usr/bin/perl
+##################
+srand;
+$number = int(rand(10) + 1);
+print $number;
+exit;
+
+Ok the first significant line is srand; What this command does is put a random seed to use when you randomize things. You can specify a number like srand(10) or whatever it really doesn't matter. If you leave it blank by default it uses the time (seconds since the beginning of UNIX) as the randomization seed which is ideal since time is always changing. The next line that I put basically tells it to assign the scalar $number the value of whatever you get when you choose a random number from 0-10, add one, then turn it into an integer. It's a good idea to turn it into an integer because if not it could be something whack like 9.12423154542654265... Also note how I added one. This is because when you use the int() command, all it does is chop off everything after the decimal. So if you have 9.99999999, it won't round to 10 but rather just go down to 9. Also if you have 0.999999999, it won't round to 1, but stay at 0. Hence if you told it to int(rand(10)), you're really telling it to give you an integer from 0 to 9 since the possibility of it EVER being 10 is so miniscule. 
+
+Now that we have that knowledge, let's plug it into a banner rotator. To do this you'll need a decent knowledge of how to use SSI but I'll try to explain it even if you don't. Here's a rather simple but effective banner script:
+
+#!/usr/bin/perl
+######################
+@images = ('http://www.hotmagma.com/image1.gif' , 'http://www.negativezero.com/banner.gif' , 'http://www.netnexus.com/game.jpg');
+@links = ('http://www.hotmagma.com' , 'http://negativezero.com' , 'http://netnexus.com');
+
+srand;
+$which = int(rand(3));
+print "Content-type: text/html\n\n";
+print <<_HTML_
+<a href="$links[$which]"><img src="$images[$which]" border="0" alt="Visit Me"></a>
+_HTML_
+exit;
+
+Ok first off what I did as you may know if you read my lessons on arrays is that I made an array holding the list of images and an array holding the list of links that I want to possibly display (be sure your images and your links are in the same order). Next, I used srand; to plant a random seed using time. After that, I assigned to the $which scalar, the integer of a random number up to 3 (so basically a random integer from 0 to 2). Note however I did not have to incriment by 1 because arrays start off with the first element being zero. For instance, the first element in the @images array would be $images[0] NOT $images[1]. That being done, I told the script to tell the browser what's being outputted is an HTML file (Content-type: text/html is the header tag for an HTML page). Then I just inputted the HTML by telling it to print out an HTML block with the link and image for the random number. Finally tell it to exit and you're done =D.
+
+Whoopee now it's only to put the banner rotator on the page and to do this you would simply just put in an SSI tag:
+
+<!--#exec cgi="/cgi-bin/banner.cgi"-->
+
+Now this tells the server that while it's calling the HTML page to show to the browser, it has to stop and execute the script and print it's results into the HTML page before the user views it. Note however some servers don't allow for SSI because it's a security risk or something like that. It also uses a lot of server resources to look through every HTML page to see if there are SSI tags on it everytime someone views it.
+ 
+
+
+[ Copyright 2000 Roupen Mouradian, Hot Magma ] 
+
+

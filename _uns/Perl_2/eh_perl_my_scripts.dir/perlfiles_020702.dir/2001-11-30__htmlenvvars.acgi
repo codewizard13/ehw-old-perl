@@ -1,0 +1,44 @@
+#!/usr/bin/perl
+#
+#
+# Program:	htmlenvvars.acgi
+# Creator:	Eric Hepperle
+# Date:	11/30/01
+#
+# Purpose:	Displays all environment variables for CGI's, etc...  Taken almost completely from the PERL FAQ.
+#
+###################################################
+#
+# Revisions:
+#
+#	- Original:  11/30/01
+#
+#
+#
+###################################################
+#
+# Planned Improvements:
+#
+###################################################
+#
+
+print "Content-type: text/plain", "\n\n";
+
+
+print "\n\n";
+print "This program is called htmlenvvars.pl\n";
+print "\n";
+
+
+                                
+                        foreach $key (sort keys %ENV) {
+                            print $key, " = ", $ENV{$key}, "\n";
+                        }
+
+                        # exit (0);
+
+# Grab CGI variable
+$Agent = $ENV{'HTTP_USER_AGENT'};
+
+print "\n\n\$Agent = $Agent\n\n";
+

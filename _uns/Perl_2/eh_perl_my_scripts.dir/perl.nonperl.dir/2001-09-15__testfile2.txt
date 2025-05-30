@@ -1,0 +1,18 @@
+This is a test file, I am happy to say.
+
+Do you have a solution to our predicament
+
+I think not.
+
+This is test file number 2
+
+If every man were a wolf, would we literally 
+'eat' women out?
+
+If every bird were an eagle, would we respect them in the morning with dew drops
+glowing'?
+
+If program works correctly it should print this line!!!
+
+End of test file.
+

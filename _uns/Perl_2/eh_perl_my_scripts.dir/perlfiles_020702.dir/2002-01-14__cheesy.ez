@@ -1,0 +1,11 @@
+Filesystem    1024-blocks      Free %Used    Iused %Iused Mounted on
+/dev/hd4            32768      9516   71%     3548    22% /
+/dev/hd2           638976     52460   92%    48572    31% /usr
+/dev/hd9var         65536     61452    7%      290     2% /var
+/dev/hd3           106496    102788    4%       51     1% /tmp
+/dev/hd1             8192      7684    7%       59     3% /home
+/dev/lv00          188416     55776   71%    20023    43% /var/cache
+/dev/lv01           49152     44344   10%      118     1% /var/dce
+/dev/lv02           16384     15272    7%      133     4% /var/dce/security
+AFS              72000000  72000000    0%        0     0% /afs
+DFS               9000000   9000000    0%        0     0% /...

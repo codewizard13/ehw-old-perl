@@ -1,0 +1,16 @@
+To Whoever Knows the Answer:
+
+I do not understand why so many of these posts where someone says "PERL", end up with some snyd comment to the effect of "its 'Perl' not 'PERL'".  Firstly, that logic doesn't make sense.  Acronyms are traditionally written with all capital letters.  
+Some examples: NASA, GERD, NORMAL, DOS, etc...
+
+PERL or is an acronym for Practical Extraction and Report Language, and  thus it stands to reason that one would write it "correctly" with all capitals; that is the convention.
+
+So, I don't understand why so many of you (it seems), keep picking apart others posts with seemingly ignorant responses ... or am I the ignorant one?  Did Larry Wall unanimously declare that against what is proper that everyone should spell 'PERL' with all lowercase, save the first letter?  
+
+Not ever post responder does this, so this not necessarily directed at those who don't. Neither is this a flame.  This post is a genuine attempt to find the answer to the question I stated above.
+
+If I am unaware, please enlighten me.  Then, if this seems like a stupid question I will, I will not have to make a fool of myself by asking it again.
+
+Productive replys are appreciated!
+
+Have a good day.

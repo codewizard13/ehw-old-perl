@@ -1,0 +1,219 @@
+#!/usr/bin/perl
+#
+#
+# Program:	getafsquotainweb.pl
+# Creator:	Eric Hepperle
+# Date:		01/14/02
+#
+# Purpose:	Used as a form handler cgi script.  Retrieves and prints to screen user's afs quota.
+#
+###################################################
+#
+# Revisions:
+#
+#	- Original:  01/14/02
+#
+#
+#
+###################################################
+#
+# Planned Improvements:
+#
+###################################################
+#
+
+# mandatory first line of cgi.
+print "Content-type: text/html\n\n";  
+
+# program identifier.
+print "\n\n";
+print "This program is called getafsquotainweb.pl\n\n";
+
+# get cgi environment variables.
+#&ReadParse;
+
+# Define TITLE tag text.
+print "<title>RESPONSE: Current AFS Quota</title><h1>The Response</h1><hr>";
+
+# Using this list item tag will offset all text between it.
+#print "Here is the form data:<ul>";
+
+# print spacer line.
+#print "<BR>\n\n";
+
+# Prints the form data which was stored in the hash "%in".
+#
+$count = 0;
+foreach $key (keys %in) {
+
+   print "<BR><li>$key: $in{$key}";
+
+   print "<BR>\$in{$key} =\t $in{$key}<BR><BR>\n\n";
+
+   # Tracing:
+   print "COUNTING elements of \%in:\n\n";
+   print "key{$count} = $in{$key}<BR>\n\n";
+
+  $count++;
+   
+}
+
+# print spacer in the source.
+print "\n\n";
+
+#print"<BR><B>\$in{volpath}:</B>\t$in{volpath}<BR><BR>\n\n";
+
+# assign hash var to scalar.
+$volume_path = $in{volpath};
+
+print "\$volume_path = $volume_path<BR>\n\n";
+
+# get and return the current quota
+&getcurrentquota;
+
+# assign hash var to scalar (get the referring web page url).
+$referer = "$ENV{'HTTP_REFERER'}";
+
+# print referer url at end of web page.
+print "<H3>The referer was:</H3>$referer<BR>\n\n";
+
+
+
+####################################################
+# READ & PARSE
+####################################################
+
+sub ReadParse {
+
+   local (*in) = @_ if @_;
+
+   local ($i, $key, $val);
+            
+   if ( $ENV{'REQUEST_METHOD'} eq "GET" ) { 
+
+      $in = $ENV{'QUERY_STRING'}; 
+
+   } elsif ($ENV{'REQUEST_METHOD'} eq "POST") {
+
+      read(STDIN,$in,$ENV{'CONTENT_LENGTH'});
+
+   } else {
+
+   # Added for command line debugging
+   # Supply name/value form data as a command line argument
+   # Format: name1=value1\&name2=value2\&... 
+   # (need to escape & for shell)
+   # Find the first argument that's not a switch (-)
+
+   $in = ( grep( !/^-/, @ARGV )) [0];
+   $in =~ s/\\&/&/g;
+
+   }
+             
+   @in = split(/&/,$in);
+             
+   foreach $i (0 .. $#in) {
+
+      # Convert plus's to spaces
+      $in[$i] =~ s/\+/ /g;
+             
+      # Split into key and value.
+      ($key, $val) = split(/=/,$in[$i],2); # splits on the first =.
+             
+      # Convert %XX from hex numbers to alphanumeric
+      $key =~ s/%(..)/pack("c",hex($1))/ge;       
+      $val =~ s/%(..)/pack("c",hex($1))/ge;
+             
+      # Associate key and value. \0 is the multiple separator
+      $in{$key} .= "\0" if (defined($in{$key})); 
+      $in{$key} .= $val;
+   }
+
+   return length($in);
+
+}
+
+#---------------------- END READ & PARSE SUB ------------------------/
+
+
+
+
+sub getcurrentquota {
+
+
+   # NOTE: You have to be logged in and this prog must be "acgi",
+   # else this command will not work.
+   #
+
+   # assign result of fs lq command to an array.
+   @getq = `fs lq $volume_path`;
+   #
+   # Tracing:
+   print "\@getq =\n\n";
+   print "@getq<BR>\n\n";
+
+   # the data line is the 2nd line of the fs lq output.
+   $data = $getq[1];
+   #
+   # Tracing:
+   print "\$data =\n\n";
+   print "$data<BR>\n\n";
+
+   # splits the fs lq data line at white space.
+   @spdata = split(/\s+/, $data);
+   #
+   # Tracing:
+   print "\@spdata =\n\n";
+   print "@spdata<BR>\n\n";
+
+   # the second field contains the current quota in Kb.
+   $startq = $spdata[1];
+   #
+   # Tracing:
+   print "\$startq =\n\n";
+   print "$startq<BR>\n\n";
+
+#   chomp $startq;
+
+   # Define the HTML code to display current quota.
+   print "<BR><B><H4>CURRENT AFS QUOTA:</H4></B>\n\n";
+   print "<TABLE BORDER = 2 ALIGN = LEFT VALIGN = MIDDLE>\n";
+   print "<TR><TD>$startq Kb</TD></TR></TABLE>\n";
+
+   $kb = $startq;
+   #
+   # Tracing:
+   print "\$kb =\n\n";
+   print "$kb<BR>\n\n";
+   print "\$startq\n\n";
+   print "$startq<BR>\n\n";
+
+   kb2mb($startq);
+
+   print "\t = $mb MB\n\n";
+   print "<BR><BR>\n\n";
+
+   print "<FORM METHOD=post ACTION=\"http://w3.rchland.ibm.com/~v2cib484/cgi-bin/setafsquota.acgi\"><BR>\n\n";
+    
+#   print "<INPUT TYPE=\"text\" SIZE=6 NAME=\"startq\" VALUE=\"$startq\"><BR>\n\n";
+
+   print "<BR><B><H4>Enter the desired new AFS quota (cannot be greater than 300MB):</H4></B>\n\n";
+   print "<INPUT TYPE=\"text\" SIZE=6 NAME=\"reqdq\" VALUE=\"$desired_q\"><BR>\n\n";
+
+   print "<INPUT TYPE=submit VALUE=\"Click to submit\">\n";
+   print "<INPUT TYPE=reset VALUE=\"Oops, start over\"><BR>\n";
+
+   print "</FORM><BR>\n\n";
+
+   
+
+}
+
+
+sub kb2mb {
+
+   $mb = $kb / 1000;
+
+#   print "$kb Kb = $mb MB\n\n";
+
+}
