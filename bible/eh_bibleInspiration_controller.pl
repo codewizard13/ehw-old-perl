@@ -87,6 +87,7 @@ June 23, 2013
 use strict;
 use warnings;
 
+use lib '.';  # Add the current directory to @INC
 use Data::Dumper;
 use EHW_BibleInspiration;
 
