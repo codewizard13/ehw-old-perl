@@ -2,6 +2,90 @@
 #   EHW_BibleInspiration.
 #
 
+=pod
+
+=head1 NAME
+
+EHW_BibleInspiration - A module for managing and retrieving Bible verses.
+
+=head1 SYNOPSIS
+
+This module provides functionality to create a Bible object containing verses and retrieve individual verses or the entire collection. It is designed to be used in conjunction with other scripts, such as a controller script.
+
+=head1 DESCRIPTION
+
+The EHW_BibleInspiration module performs the following tasks:
+
+=over 4
+
+=item 1. Creates a new object instance of the module.
+
+=item 2. Provides a method (C<getBibleObj>) to create and return a hash reference containing Bible verses.
+
+=item 3. Provides a method (C<getVerseObj>) to retrieve and display Bible verses, with the potential to implement random verse selection.
+
+=back
+
+=head1 DEPENDENCIES
+
+This module depends on the following Perl modules:
+
+=over 4
+
+=item * C<strict> and C<warnings>: For enforcing good coding practices.
+
+=item * C<IO::File>: For file handling (though not currently used in the implementation).
+
+=item * C<Data::Dumper>: For debugging and printing data structures.
+
+=back
+
+=head1 METHODS
+
+=over 4
+
+=item * C<new>: Constructor method to create a new instance of the module.
+
+=item * C<getBibleObj>: Returns a hash reference containing a collection of Bible verses.
+
+=item * C<getVerseObj>: Retrieves and displays Bible verses. Currently, the implementation is incomplete and commented out.
+
+=back
+
+=head1 OUTPUT
+
+The module produces the following output when its methods are called:
+
+=over 4
+
+=item * A hash reference containing Bible verses (via C<getBibleObj>).
+
+=item * Debugging information or printed Bible verses (via C<getVerseObj>, if implemented).
+
+=back
+
+=head1 GOTCHAS
+
+=over 4
+
+=item * The C<getVerseObj> method is incomplete and contains commented-out code. It does not currently return a random verse or any meaningful output.
+
+=item * The module includes unused code and commented-out sections, which may cause confusion during maintenance.
+
+=item * The C<IO::File> module is included but not used in the current implementation.
+
+=back
+
+=head1 AUTHOR
+
+Eric Hepperle
+
+=head1 DATE
+
+July 3, 2013
+
+=cut
+
 package EHW_BibleInspiration;
 use strict;
 use warnings;
