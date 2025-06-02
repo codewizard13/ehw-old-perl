@@ -106,7 +106,9 @@ sub main
     # exit;
     
     $o->getVerseObj();
-    listHash($bo_ref);
+    # listHash($bo_ref);
+
+    displayFormattedBibleVerses($bo_ref); # if ref($bo_ref) eq 'ARRAY';
     
     message("Done.");
 }
@@ -130,5 +132,23 @@ sub listHash
     foreach my $key (sort keys %{$hash}) {
         my $value = $hash->{$key};
         message("$key  => $value\n");
+    }
+}
+
+
+sub displayFormattedBibleVerses {
+    my ($bible_verses) = @_;
+    
+    # Debugging: Check the structure of $bible_verses
+    print "Debug: \$bible_verses is of type: " . ref($bible_verses) . "\n";
+    print Dumper($bible_verses);
+
+    # Ensure $bible_verses is an array reference
+    if (ref($bible_verses) eq 'ARRAY') {
+        foreach my $verse (@{$bible_verses}) {
+            print "Book: $verse->{book}, Chapter: $verse->{chapter}, Verse: $verse->{verse}, Text: $verse->{text}\n";
+        }
+    } else {
+        error("Expected an array reference for Bible verses, but got: " . ref($bible_verses));
     }
 }
