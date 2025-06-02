@@ -143,12 +143,17 @@ sub displayFormattedBibleVerses {
     print "Debug: \$bible_verses is of type: " . ref($bible_verses) . "\n";
     print Dumper($bible_verses);
 
-    # Ensure $bible_verses is an array reference
-    if (ref($bible_verses) eq 'ARRAY') {
-        foreach my $verse (@{$bible_verses}) {
-            print "Book: $verse->{book}, Chapter: $verse->{chapter}, Verse: $verse->{verse}, Text: $verse->{text}\n";
+    # Ensure $bible_verses is a hash reference
+    if (ref($bible_verses) eq 'HASH') {
+        foreach my $book (sort keys %{$bible_verses}) {
+            foreach my $chapter (sort keys %{$bible_verses->{$book}}) {
+                foreach my $verse (sort keys %{$bible_verses->{$book}->{$chapter}}) {
+                    my $text = $bible_verses->{$book}->{$chapter}->{$verse};
+                    print "Book: $book, Chapter: $chapter, Verse: $verse, Text: $text\n";
+                }
+            }
         }
     } else {
-        error("Expected an array reference for Bible verses, but got: " . ref($bible_verses));
+        error("Expected a hash reference for Bible verses, but got: " . ref($bible_verses));
     }
 }
