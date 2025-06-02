@@ -100,10 +100,10 @@ sub main
     print "\$o is type: " . ref($o) . ".\n";
     print "\$bo_ref is type: " . ref($bo_ref) . ".\n";
     
-    print "GETTING VERSE OBJECT\n\n";
-    print Dumper($o->getVerseObj());
+    # print "GETTING VERSE OBJECT\n\n";
+    # print Dumper($o->getVerseObj());
     
-    exit;
+    # exit;
     
     $o->getVerseObj();
     listHash($bo_ref);
